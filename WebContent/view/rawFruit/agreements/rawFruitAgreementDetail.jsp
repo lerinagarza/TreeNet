@@ -17,13 +17,11 @@
 <%-- tpl:put name="headarea" --%>
 <%@page import ="
     com.treetop.controller.rawfruitagreements.InqRawFruitAgreement,
-    com.treetop.businessobjects.RawFruitAgreement,
-    com.treetop.businessobjects.RawFruitAgreementLine,
-    com.treetop.businessobjects.Contact,
-    com.treetop.businessobjects.PhoneNumber,
     java.util.List"
         %>
 <%@ page import="com.treetop.utilities.html.HTMLHelpersMasking" %>
+<%@ page import="com.treetop.utilities.UtilityDateTime" %>
+<%@ page import="com.treetop.businessobjects.*" %>
 
 <title>Raw Fruit Agreement</title>
 <%-- /tpl:put --%>
@@ -63,10 +61,16 @@
 
       <div class="clearfix">
       <div style="float:left; margin-right:2em;">
-        Entry Date: <%=rfa.getEntryDate() %>
+          <%
+              DateTime entryDate = UtilityDateTime.getDateFromyyyyMMdd(rfa.getEntryDate());
+          %>
+        Entry Date: <%=entryDate.getDateFormatMMddyyyySlash() %>
       </div>
         <div style="float:left">
-          Revised Date: <%=rfa.getRevisedDate() %>
+            <%
+                DateTime revisionDate = UtilityDateTime.getDateFromyyyyMMdd(rfa.getRevisedDate());
+            %>
+          Revised Date: <%=revisionDate.getDateFormatMMddyyyySlash() %>
         </div>
       </div>
       

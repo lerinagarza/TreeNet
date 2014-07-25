@@ -19,6 +19,8 @@
  %>
 <%@ page import="java.util.Arrays" %>
 <%@ page import="com.treetop.controller.rawfruitagreements.UpdCropInfo" %>
+<%@ page import="com.treetop.utilities.html.DropDownSingle" %>
+<%@ page import="com.treetop.utilities.html.HtmlSelect" %>
 <title>Raw Fruit Agreement Crop Details</title>
 <%-- /tpl:put --%>
 <jsp:include page="/view/template/scripts.jsp"></jsp:include>
@@ -48,13 +50,9 @@
         <div class="row-fluid">
           <div class="span4">
             <label >Crop</label>
-              <select name="crop">
-                  <option value=""></option>
-                  <option value="2013">2013</option>
-                  <option value="2014">2014</option>
-              </select>
+              <%=DropDownSingle.buildDropDown(updCropInfo.getDropDownCrop(), "crop", "", line.getCrop() , "", false, "", HtmlSelect.DescriptionType.DESCRIPTION_ONLY)%>
             <label >Type</label>
-            <input type="text" name="type" value="<%=line.getType()%>">
+              <%=DropDownSingle.buildDropDown(updCropInfo.getDropDownType(), "cropType", "", line.getType() , "", false, "", HtmlSelect.DescriptionType.DESCRIPTION_ONLY)%>
 
             <label >Run</label>
             <select name="run" >
@@ -63,19 +61,10 @@
             </select>
 
             <label >Category</label>
-            <select name="category" >
-              <option value=""></option>
-              <option value="">Juice</option>
-              <option value="">Peeler</option>
-            </select>
+              <%=DropDownSingle.buildDropDown(updCropInfo.getDropDownCategory(), "cropCategory", "", line.getCategory() , "", false, "", HtmlSelect.DescriptionType.DESCRIPTION_ONLY)%>
 
             <label >Variety</label>
-            <select name="variety" >
-              <option value=""></option>
-              <option value="">Fuji</option>
-              <option value="">Jazz</option>
-              <option value="">Golden Delicious</option>
-            </select>
+              <%=DropDownSingle.buildDropDown(updCropInfo.getDropDownVariety(), "cropVariety", "", line.getVariety() , "", false, "", HtmlSelect.DescriptionType.DESCRIPTION_ONLY)%>
 
             <label >Variety Misc</label>
             <input type="text" name="varietyMisc" value="<%=line.getVarietyMisc()%>">
@@ -85,17 +74,9 @@
             <label ># of Bins</label>
             <input type="tel" name="bins" value="<%=line.getBins()%>">
             <label >Bin Type</label>
-            <select name="binType" >
-              <option value=""></option>
-              <option value="">Wood</option>
-              <option value="">Plastic</option>
-            </select>
+              <%=DropDownSingle.buildDropDown(updCropInfo.getDropDownBinType(), "cropBinType", "", line.getBinType() , "", false, "", HtmlSelect.DescriptionType.DESCRIPTION_ONLY)%>
             <label >Payment Type</label>
-            <select name="paymentType" >
-              <option value=""></option>
-              <option value="">Cash</option>
-              <option value="">Credit</option>
-            </select>
+              <%=DropDownSingle.buildDropDown(updCropInfo.getDropDownPaymentType(), "cropPayment", "", line.getPaymentType() , "", false, "", HtmlSelect.DescriptionType.DESCRIPTION_ONLY)%>
           </div>
           
           <div class="span4">

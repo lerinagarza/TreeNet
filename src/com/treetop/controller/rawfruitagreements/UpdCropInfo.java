@@ -11,6 +11,7 @@ import java.util.Vector;
 
 public class UpdCropInfo extends BaseViewBeanR4{
 
+    private String writeUpNumber = "";
     private String sequence = "";
 	private String crop = "";
 	private String type = "";
@@ -236,5 +237,13 @@ public class UpdCropInfo extends BaseViewBeanR4{
 
     public void setDropDownPaymentType(Vector<HtmlOption> dropDownPaymentType) {
         this.dropDownPaymentType = dropDownPaymentType;
+    }
+
+    public String getWriteUpNumber() {
+        return writeUpNumber;
+    }
+
+    public void setWriteUpNumber(String writeUpNumber) {
+        this.writeUpNumber = writeUpNumber;
     }
 }

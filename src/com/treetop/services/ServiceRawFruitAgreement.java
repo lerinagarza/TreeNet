@@ -3,6 +3,7 @@ package com.treetop.services;
 import com.treetop.businessobjects.*;
 import com.treetop.controller.rawfruitagreements.InqRawFruitAgreements;
 import com.treetop.controller.rawfruitagreements.UpdContract;
+import com.treetop.controller.rawfruitagreements.UpdCropInfo;
 import com.treetop.utilities.GeneralUtility;
 import com.treetop.utilities.UtilityDateTime;
 import com.treetop.utilities.html.HtmlOption;
@@ -271,8 +272,6 @@ public class ServiceRawFruitAgreement {
 
     public static void updateAgreement(UpdContract updContract) {
 
-        RawFruitAgreement rfa;
-
         Connection conn = null;
         try {
 
@@ -370,6 +369,88 @@ public class ServiceRawFruitAgreement {
     }
 
 
+    public static void updateAgreementLine(UpdCropInfo updCropInfo) {
+
+
+        Connection conn = null;
+        try {
+
+            conn = ServiceConnection.getConnectionStack15();
+            deleteAgreementLine(conn, updCropInfo);
+            insertAgreementLine(conn, updCropInfo);
+
+        } catch (Exception e) {
+            System.err.println(e);
+        } finally {
+            try {
+                ServiceConnection.returnConnectionStack15(conn);
+            } catch (Exception e) {}
+        }
+
+    }
+
+    private static void deleteAgreementLine(Connection conn, UpdCropInfo updCropInfo)
+            throws Exception {
+
+        Statement stmt = null;
+        try {
+
+            stmt = conn.createStatement();
+            String sql = BuildSQL.deleteAgreementLine(updCropInfo);
+            stmt.executeUpdate(sql);
+
+        } catch (Exception e) {
+            throw new Exception(e);
+        } finally {
+            try {
+                stmt.close();
+            } catch (Exception e) {}
+        }
+
+    }
+
+
+    private static void insertAgreementLine(Connection conn, UpdCropInfo updCropInfo)
+            throws Exception {
+
+        PreparedStatement pstmt = null;
+        try {
+
+            String sql = BuildSQL.insertAgreementLine(updCropInfo);
+            pstmt = conn.prepareStatement(sql);
+
+            pstmt.setString(1, updCropInfo.getWriteUpNumber());
+            pstmt.setString(2, updCropInfo.getSequence());
+            pstmt.setString(3, updCropInfo.getCrop());
+            pstmt.setString(4, updCropInfo.getType());
+            pstmt.setString(5, updCropInfo.getRun());
+            pstmt.setString(6, updCropInfo.getCategory());
+            pstmt.setString(7, updCropInfo.getVariety());
+            pstmt.setString(8, updCropInfo.getVarietyMisc());
+            pstmt.setBigDecimal(9, new BigDecimal(updCropInfo.getBins()));
+            pstmt.setString(10, updCropInfo.getBinType());
+            pstmt.setString(11, updCropInfo.getPaymentType());
+            pstmt.setBigDecimal(12, new BigDecimal(updCropInfo.getJuicePrice()));
+            pstmt.setBigDecimal(13, new BigDecimal(updCropInfo.getJpPrice()));
+            pstmt.setBigDecimal(14, new BigDecimal(updCropInfo.getPeelerPrice()));
+            pstmt.setBigDecimal(15, new BigDecimal(updCropInfo.getPremiumPrice()));
+            pstmt.setBigDecimal(16, new BigDecimal(updCropInfo.getFreshSlicePrice()));
+            pstmt.setBigDecimal(17, new BigDecimal(updCropInfo.getPrice()));
+
+
+            pstmt.executeUpdate();
+
+        } catch (Exception e) {
+            throw new Exception(e);
+        } finally {
+            try {
+                pstmt.close();
+            } catch (Exception e) {}
+        }
+
+    }
+
+
 
 
 
@@ -429,6 +510,20 @@ public class ServiceRawFruitAgreement {
 
         }
 
+        private static String deleteAgreementLine(UpdCropInfo updCropInfo) {
+
+            String ttLibrary = GeneralUtility.getTTLibrary(updCropInfo.getEnvironment());
+
+            StringBuilder sql = new StringBuilder();
+
+            sql.append(" DELETE " + ttLibrary + ".GRPRFACP \r");
+            sql.append(" WHERE ACWNBR='" + updCropInfo.getWriteUpNumber() + "' \r");
+            sql.append("   AND ACCSEQ='" + updCropInfo.getSequence() + "' \r");
+
+            return sql.toString();
+
+        }
+
         private static String insertAgreementHeader(UpdContract updContract) {
 
             String ttLibrary = GeneralUtility.getTTLibrary(updContract.getEnvironment());
@@ -437,7 +532,22 @@ public class ServiceRawFruitAgreement {
 
             sql.append(" INSERT INTO " + ttLibrary + ".GRPRFAHD \r");
             sql.append(" VALUES ( \r");
-            sql.append(" ?,  ?, ?, ?, ?, ? \r");
+            sql.append(" ?, ?, ?, ?, ?, ? \r");
+            sql.append(" ) \r");
+
+            return sql.toString();
+
+        }
+
+        private static String insertAgreementLine(UpdCropInfo updCropInfo) {
+
+            String ttLibrary = GeneralUtility.getTTLibrary(updCropInfo.getEnvironment());
+
+            StringBuilder sql = new StringBuilder();
+
+            sql.append(" INSERT INTO " + ttLibrary + ".GRPRFACP \r");
+            sql.append(" VALUES ( \r");
+            sql.append(" ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? \r");
             sql.append(" ) \r");
 
             return sql.toString();

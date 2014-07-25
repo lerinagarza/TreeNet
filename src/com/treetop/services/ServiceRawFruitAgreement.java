@@ -254,6 +254,7 @@ public class ServiceRawFruitAgreement {
             String sql = BuildSQL.getAgreementHeader(inqRawFruitAgreements);
             rs = stmt.executeQuery(sql);
             rawFruitAgreement = LoadFields.getAgreementHeader(rs);
+            inqRawFruitAgreements.setAgreement(rawFruitAgreement);
 
 
         } catch (Exception e) {

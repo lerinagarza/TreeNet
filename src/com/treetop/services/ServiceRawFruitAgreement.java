@@ -28,7 +28,7 @@ public class ServiceRawFruitAgreement {
         try {
             InqRawFruitAgreement inqRFA = new InqRawFruitAgreement();
             inqRFA.setEnvironment("TST");
-            inqRFA.setId(1);
+            inqRFA.setId("1");
             getAgreement(inqRFA);
 
 

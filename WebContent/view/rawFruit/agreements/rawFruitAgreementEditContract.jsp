@@ -53,13 +53,13 @@
       <h1>Contract Details <%=rawFruit.getWriteUpNumber() %></h1>
       <form action="/web/CtlRawFruitAgreements/editContract/<%=rawFruit.getWriteUpNumber() %>" method="post">
 	      <div class="well">
-	        <label for="">Supplier #</label>
+	        <label>Supplier #</label>
 	        <input type="text" name="supplierNumber" value="<%=rfa.getSupplierNumber()%>">
-	        <label for="">Entry Date</label>
+	        <label>Entry Date</label>
 	        <input type="text" class="datepicker" name="entryDate" value="<%=entryDate.getDateFormatMMddyyyySlash()%>">
-	        <label for="">Revision Date</label>
+	        <label>Revision Date</label>
 	        <input type="text" class="datepicker" name="revisionDate" value="<%=revDate.getDateFormatMMddyyyySlash()%>">
-	        <label for="">Crop Year</label>
+	        <label>Crop Year</label>
    	        <%=DropDownSingle.buildDropDown(updContract.getDropDownCropYear(), "cropYear","",rfa.getCropYear(),"", false, "", HtmlSelect.DescriptionType.DESCRIPTION_ONLY)%>
 
 	       <button>Save</button>

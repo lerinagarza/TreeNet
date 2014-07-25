@@ -13,7 +13,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 import java.util.Vector;
 
 import static org.junit.Assert.fail;
@@ -25,7 +27,7 @@ public class ServiceRawFruitAgreement {
         try {
             InqRawFruitAgreements inqRFA = new InqRawFruitAgreements();
             inqRFA.setEnvironment("TST");
-            inqRFA.setWriteUpNumber("123");
+            inqRFA.setWriteUpNumber("1234");
             getAgreement(inqRFA);
 
             // test code - more stuff
@@ -113,16 +115,14 @@ public class ServiceRawFruitAgreement {
 
     }
 
-	public static void getAgreement(InqRawFruitAgreements inqRawFruitAgreements)
-     {
-        RawFruitAgreement rfa = null;
+	public static void getAgreement(InqRawFruitAgreements inqRawFruitAgreements) {
 
         Connection conn = null;
         try {
 
             conn = ServiceConnection.getConnectionStack15();
-            rfa = getAgreement(conn, inqRawFruitAgreements);
-            inqRawFruitAgreements.setAgreement(rfa);
+            getAgreement(conn, inqRawFruitAgreements);
+            getAgreementLines(conn, inqRawFruitAgreements);
 
         } catch (Exception e) {
             System.err.println(e);
@@ -343,6 +343,33 @@ public class ServiceRawFruitAgreement {
     }
 
 
+     private static void getAgreementLines(Connection conn, InqRawFruitAgreements inqRawFruitAgreements) {
+
+        Statement stmt = null;
+        ResultSet rs = null;
+        try {
+
+            stmt = conn.createStatement();
+            String sql = BuildSQL.getAgreementLines(inqRawFruitAgreements);
+            rs = stmt.executeQuery(sql);
+
+            List<RawFruitAgreementLine> lines = LoadFields.getAgreementLines(rs);
+            inqRawFruitAgreements.getAgreement().setLines(lines);
+
+
+        } catch (Exception e) {
+            System.err.println(e);
+        } finally {
+            try {
+                rs.close();
+                stmt.close();
+            } catch (Exception e) {}
+        }
+
+    }
+
+
+
 
 
     public static RawFruitAgreementLine getAgreementLine() {
@@ -416,6 +443,21 @@ public class ServiceRawFruitAgreement {
 
         }
 
+        private static String getAgreementLines(InqRawFruitAgreements inqRawFruitAgreements) {
+
+            String ttLibrary = GeneralUtility.getTTLibrary(inqRawFruitAgreements.getEnvironment());
+
+            StringBuilder sql = new StringBuilder();
+
+            sql.append(" SELECT *  \r");
+            sql.append(" FROM " + ttLibrary + ".GRPRFACP \r");
+            sql.append(" WHERE ACWNBR='" + inqRawFruitAgreements.getWriteUpNumber() + "' \r");
+            sql.append(" ORDER BY ACCROP, ACTYPE, ACORUN, ACCATG, ACVARI, ACVARM \r");
+
+            return sql.toString();
+
+        }
+
     }
 
     private static class LoadFields {
@@ -431,7 +473,34 @@ public class ServiceRawFruitAgreement {
                 rfa.setCropYear(rs.getString("AHCRPY").trim());
                 rfa.setFieldRep(rs.getString("AHFREP").trim());
             }
+
             return rfa;
+
+        }
+
+        private static List<RawFruitAgreementLine> getAgreementLines(ResultSet rs) throws Exception {
+
+            List<RawFruitAgreementLine> lines = new ArrayList<RawFruitAgreementLine>();
+
+            while (rs.next()) {
+
+                RawFruitAgreementLine line = new RawFruitAgreementLine();
+
+                line.setSequence(rs.getString("ACCSEQ"));
+                line.setCrop(rs.getString("ACCROP"));
+                line.setType(rs.getString("ACTYPE"));
+                line.setRun(rs.getString("ACORUN"));
+                line.setCategory(rs.getString("ACCATG"));
+                line.setVariety(rs.getString("ACVARI"));
+                line.setVarietyMisc(rs.getString("ACVARM"));
+
+                lines.add(line);
+
+
+            }
+
+
+            return lines;
 
         }
 

@@ -53,7 +53,7 @@
           Supplier #: <%=rfa.getSupplierNumber() %> - <%=rfa.getSupplierName()%>
         </div>
         <div style="float:right">
-          <a href="/web/CtlRawFruitAgreements/editContract/<%=rawFruit.getWriteUpNumber()%>">Edit</a>
+          <a href="/web/CtlRawFruitAgreements/editContract/<%=rawFruit.getWriteUpNumber()%>/?environment=<%= rawFruit.getEnvironment()%>">Edit</a>
         </div>
       </div>
       </div>
@@ -89,7 +89,7 @@
           <h3><%=line.getType() + " " + line.getCrop()%></h3>
         </div>
         <div style="float:right">
-          <a href="/web/CtlRawFruitAgreements/editCropInfo/<%= rawFruit.getWriteUpNumber()%>/<%=line.getSequence()%> ">Edit</a>
+          <a href="/web/CtlRawFruitAgreements/editCropInfo/<%= rawFruit.getWriteUpNumber()%>/<%=line.getSequence()%>/?environment=<%= rawFruit.getEnvironment()%> ">Edit</a>
         </div>
       </div>
         
@@ -150,7 +150,7 @@
           
         </div>
         <div style="float:right">
-          <a href="#editLocation">Edit</a>
+            <a href="/web/CtlRawFruitAgreements/editContract/<%=rawFruit.getWriteUpNumber()%>/?environment=<%= rawFruit.getEnvironment()%>">Edit</a>
         </div>
       </div>
         
@@ -201,7 +201,7 @@
           
         </div>
         <div style="float:right">
-          <a href="#editContact">Edit</a>
+            <a href="/web/CtlRawFruitAgreements/editContract/<%=rawFruit.getWriteUpNumber()%>/?environment=<%= rawFruit.getEnvironment()%>">Edit</a>
         </div>
       </div>
         

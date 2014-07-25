@@ -44,6 +44,7 @@
   
 <div class="row-fluid" id="editCrop1">
     <form action="/web/CtlRawFruitAgreements/editCropInfo/<%= rawFruit.getWriteUpNumber()%>/1" method="post">
+      <input type="hidden" name="environment" value="<%=rawFruit.getEnvironment()%>"/>
       <div class="span12">
       <h1>Crop Details</h1>
       <div class="well">

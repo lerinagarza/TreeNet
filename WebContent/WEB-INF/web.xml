@@ -258,15 +258,6 @@
         <description>
         </description>
         <display-name>
-            CtlPFAutomation</display-name>
-        <servlet-name>CtlPFAutomation</servlet-name>
-        <servlet-class>
-            com.treetop.app.plantfloorautomation.CtlPFAutomation</servlet-class>
-    </servlet>
-    <servlet>
-        <description>
-        </description>
-        <display-name>
             CtlQuality</display-name>
         <servlet-name>CtlQuality</servlet-name>
         <servlet-class>
@@ -473,10 +464,6 @@
     <servlet-mapping>
         <servlet-name>ServerStartUp</servlet-name>
         <url-pattern>/ServerStartUp</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>CtlPFAutomation</servlet-name>
-        <url-pattern>/CtlPFAutomation</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>CtlQuality</servlet-name>

@@ -52,6 +52,7 @@
     <div class="span12">
       <h1>Contract Details <%=rawFruit.getWriteUpNumber() %></h1>
       <form action="/web/CtlRawFruitAgreements/editContract/<%=rawFruit.getWriteUpNumber() %>" method="post">
+          <input type="hidden" name="environment" value="<%=rawFruit.getEnvironment()%>"/>
 	      <div class="well">
 	        <label>Supplier #</label>
 	        <input type="text" name="supplierNumber" value="<%=rfa.getSupplierNumber()%>">

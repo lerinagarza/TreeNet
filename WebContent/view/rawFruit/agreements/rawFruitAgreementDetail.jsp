@@ -44,7 +44,7 @@
 
 <div class="row-fluid ui-widget-content ui-corner-bottom" id="details">
     <div class="span12">
-      
+      <!-- new comment -->
       <h1>Contract Details</h1>
       <div class="well">
       <div>

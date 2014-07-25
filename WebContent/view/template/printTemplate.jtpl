@@ -1,0 +1,83 @@
+<%@page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width">
+
+<%-- tpl:insert attribute="headarea" --%>
+	<title></title>
+<%-- /tpl:insert --%>
+
+<!-- External JavaScript files -->
+<script src="${pageContext.request.contextPath}/Include/js/libs/modernizr-2.6.1.min.js"></script>
+<script src="${pageContext.request.contextPath}/Include/js/libs/jquery-1.7.2.min.js"></script>
+<script src="${pageContext.request.contextPath}/Include/js/libs/jquery-ui-1.8.22.custom.min.js"></script> 
+<script src="${pageContext.request.contextPath}/Include/js/script.min.js"></script>
+
+
+
+<%-- tpl:insert attribute="js" --%>
+
+<%-- /tpl:insert --%>
+
+</head>
+<body>
+<%-- 
+    There is an issue copy/pasting into MS Office from secured applications.  It tries to access the
+    style sheet which require a login.  It only appears to be an issue for MSIE8.  The hack around this
+    is to include the style sheet references inside the body.  Browsers (including MSIE8) accept this
+    and render the style appropriately.  However, when MS Office tries to look for style sheets (in the <head>,
+    where they are supposed to be) it can't find them, and renders the content on its own.
+--%>
+
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/Include/css/cupertino/jquery-ui-1.8.22.custom.css" />
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/Include/css/style-compiled.css" />
+	<div id="printer-output">
+		<%-- tpl:insert attribute="bodyarea" --%>
+	
+	
+	
+	
+		<%-- /tpl:insert --%>
+	</div>
+
+
+<%	//Do not post data to Google Analytics when running on localhost
+	if (!request.getServerName().equals("localhost")) { %> 
+<script type="text/javascript">
+<% String userID = com.treetop.SessionVariables.getSessionttiUserID(request, response); 
+ // if the user id is null or empty set the string accordingly -->
+ if(userID == null){ 
+ 	userID="null"; 
+ }else if(userID.equals("")){
+ 	userID="empty"; 
+} 
+%> 
+   	var _gaq = _gaq || [];
+   	_gaq.push(['_setAccount', 'UA-27858316-1']); 
+ 	_gaq.push(['_setCustomVar', 
+       1,             // This custom var is set to slot #1.  Required parameter. 
+       'User ID',   // The name of the custom variable.  Required parameter. 
+      '<%= userID %>',      // Sets the value of "User Type" to "Member" or "Visitor" depending on status.  Required parameter.
+        2             // Sets the scope to session-level.  Optional parameter. 
+    ]); 
+   _gaq.push(['_setSiteSpeedSampleRate', 100]); 
+   _gaq.push(['_trackPageview']); 
+
+   (function() { 
+     var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; 
+     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; 
+     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); 
+   })(); 
+
+</script> 
+<%	} %>
+
+
+</body>
+</html>

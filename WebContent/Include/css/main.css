@@ -1,0 +1,1818 @@
+/*  Stylesheet designed for use in all TreeNet applications.                */
+/*  This stylesheet will include:                                           */
+/*        Default Font Size                                                 */
+/*        Default Font-Family or Name                                       */
+/*        Any Color, Background, Font                                       */
+/*        All Borders                                                       */ 
+/*  Classes are defined based on the type of HTML tag being used.           */
+/*  EASILY SEARCH BY COLOR NUMBER AS LISTED IN THE MAIN COLOR PALATE BELOW  */
+/****************************************************************************/
+/*		MAIN COLOR PALATE   >>     R G B     <<                     */
+/****************************************************************************/
+/* 00  -  #FFFFFF  -  255.255.255  -  White				    */               
+/*		  Main Table Body Background Color
+/* 01  -  #F3FAFF  -  243.250.255  -  Pale Blue     			    */
+/*		  Page Background Color 				    */
+/* 02  -  #DCDCDC  -  220.220.220  -  Light Grey			    */
+/*		  Footer Background Color / Column Background		    */
+/* 03  -  #990000  -  153.000.000  -  Burgandy Red			    */
+/*		  Special - Accentuate Text, Section Headers, Etc.	    */
+/* 04  -  #000000  -  000.000.000  -  Black				    */
+/*		  Text Default Color				   	    */
+/* 05  -  #003366  -  000.051.102  -  Navy				    */
+/*		  Special - Accentuate Text, Mouseoverlinks		    */
+/* 06  -  #C3E7FF  -  195.231.255  -  Med Blue     			    */
+/*		  Row Background Color 				    */
+/****************************************************************************/
+/*		DEFAULT VALUES						    */
+/****************************************************************************/
+/*     Text:  text-align  left (Change in JSP if needed)		    */	
+/*            font-family arial						    */
+/*----- BODY ---------------------------------------------------------------*/
+ body, td, th, p { 
+	font-family: Arial, Tahoma, sans-serif;
+	font-size: 11px;
+	line-height: 18px;
+	/*color: #D2B48C; */ 			/* $Color 13 */
+	color: #9A7F5A;
+	margin: 0;
+	}
+/*----- HEADER --------------------------------------------------------------*/
+.header{
+	width:100%;
+	height: 125px;
+	background-image:url('https://image.treetop.com/webapp/headerTableBgV2.jpg');
+	}
+.headertxt{
+    color: #003399;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 35px;
+    margin: 8px 0 5px;
+}
+.envheader{
+    color: #CF2C33;
+    float: left;
+    font-size: 22px;
+    line-height: 115px;
+    position: relative;
+}
+#logo{
+	background-image:url('/web/Include/images/TT_logo2C-2013.png');
+	background-size:50%;
+	width:125px;
+	height: 80px;
+	margin: 0 auto;
+	float: left;
+}
+/* Blue Color Palette used in template:
+	
+	color  1: #5a5e62 	Top background color
+	color  2: #7a7a7a 	Left link color
+	color  3: #93acc4	Hinky foreground color
+	color  4: #809eba 	Top navbar background/matching hinkies
+	color  5: #f1f2f2 	Alternative background color 1 (or #b9cbdc or #d1d7dc)
+	color 5a: #f6f6f6 	Alternative background color 2 
+	color  6: #f6f6f6 	Field background color
+	color  7: #333333	Page Header text
+	color  8: #990000	link highlight
+	color  9: #426696	link in text runs
+	color 10: #5C6166	Left link color selected
+	color 11: #949494	Highlight border color for color 18
+	color 12: #616161	Shadow border color for color 18
+	color 11a:#D3E1ED	Highlight for color 4
+	color 12a:#BCC8D4	Shadow for color 4
+	color 13: #4d4d4d 	dark gray (normal text)
+	color 14: #ffffff	white
+	color 15: #808080	medium gray
+	color 16: #bebebe	line gray
+	color 17: #000000	black
+	color 18: #7a7a7a 	Field border color
+*/
+
+.expandOpen {
+    background-color: #DCDCDC;
+    border: 1px solid #999999;
+}
+.expand {
+    background-color: #DCDCDC;
+    border: 1px solid #999999;
+}
+.collapse{
+    border-left: 2px solid #999999;
+    border-right: 2px solid #999999;
+    border-bottom: 1px solid #999999;
+    padding-left: 15px;
+    padding-top: 8px;
+    padding-right: 15px;
+    padding-bottom: 10px;
+}
+/* ----  Basic HTML Tags  ---- */
+p {
+	padding-bottom: 9px;
+	}
+	
+.textbox{
+	width: 300px;
+	padding-left: 10px;
+	margin-bottom:5px;
+}
+
+a {
+	color: #72422E; 			/* $Color 9 */
+	text-decoration: underline;
+	}
+a:hover {
+	color: #990000;				/* $Color 8 */
+	}
+label {
+	float:left;
+	text-align:left;
+	width:100px;
+}
+.radio {
+	height: 25px;
+	width: 19px;
+	clear: left;
+	float: left;
+	margin: 0 0 3px;
+	padding: 0 0 0 26px;
+	cursor: default;
+}
+fieldset{
+	padding: 30px;
+	margin: 25px;
+	color: #72422E;
+	border-radius:7px;
+}
+
+.maincontent{
+	width: 850px;
+	margin: 0 auto;
+	position: relative;
+	color: #72422E;
+}
+h1, h2, h3, h4, h5, h6,
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { 
+	font-weight: bold;
+	color: #72422E; 			/* $Color 7 */
+	}
+h1 { font-size: 18px; line-height: 18px; margin:  0px 0 6px 0; padding:0px; }
+h2 { font-size: 18px; line-height: 20px; margin: 12px 0 6px 0; padding:0px; }
+h3 { color: #990000;
+    font-family: Trebuchet MS,Arial;
+    font-size: 18px;
+    letter-spacing: 0.01em;
+    line-height: 32px;
+    margin: 12px 0 0;
+    padding: 0;}
+h4 { font-size: 13px; line-height: 15px; margin:  8px 0 3px 0; padding:0px; }
+h5 { font-size: 12px; line-height: 14px; margin:  8px 0 2px 0; padding:0px; }
+h6 { font-size: 11px; line-height: 13px; margin:  2px 0 1px 0; padding:0px; }
+h7 { font-size: 10px; line-height: 12px; margin:  2px 0 1px 0; padding:0px; }
+select{
+margin-bottom: 10px;
+}
+img { border-width: 0;;
+	float: left;
+	position: relative;
+	top: 0px }
+.img_inline_left  { border-width: 0; padding: 0px; margin: 3px 10px 0px 0px; }
+.img_inline_right {	border-width: 0; padding: 0px; margin: 3px 0px 0px 10px; }
+#container{
+	width: 600px;
+}
+.ui-datepicker{
+	z-index: 10000;
+}
+.ui-datepicker-trigger{
+	float:none;
+}
+#content-wrapper{
+	width:100%;
+	clear:both;
+	position: relative;
+}
+#footer{
+	width: 100%;
+	margin: auto;
+	position: relative;
+	padding: 10px 50px;
+}
+textarea{ width:700px; height:100px; font-size: 10pt; }
+hr {
+	height:1px;
+	color: #bebebe;				/* $Color 16 */
+	margin-bottom: 2px;
+	border-width: 0px;
+	border-bottom-width: 1px;
+}
+
+.hr_thick {
+	color: #bebebe;				/* $Color 16 */
+	margin-bottom: 2px;
+	height: 1px;
+	border-color: #bebebe;		/* $Color 16 */
+	border-width: 0px;
+	border-bottom-width: 4px;
+	border-style: solid;
+}
+
+#treenetlogo{
+	top: 35px;
+	width: 160px; 
+	height: 45px;
+}
+
+.minortreelinkitem{
+	line-height:25px;
+}
+.minortreelink{
+	color: #26BC4F;
+	font-size: 14px;
+	margin:  8px 0 3px 0;
+}
+.majortreelink{
+	color: #CF2C33;
+	font-size: 18px;
+	margin:  8px 0 5px 0;
+	font-weight: bold;
+	line-height: 35px;
+}
+.rowspace{
+	width: 5%;
+}
+/* ----  Header Area ---- */
+#searchbox{
+float:right;
+}
+/* search form 
+-------------------------------------- */
+.searchform {
+	position:relative;
+	float:right; 
+	margin: 12px 65px;
+	display: inline-block;
+	zoom: 1; /* ie7 hack for display:inline-block */
+	*display: inline;
+	border: solid 1px #72422E;
+	padding: 6px 5px;
+	z-index: 100;
+	
+	-webkit-border-radius: 2em;
+	-moz-border-radius: 2em;
+	border-radius: 2em;
+
+	-webkit-box-shadow: 0 1px 0px rgba(0,0,0,.1);
+	-moz-box-shadow: 0 1px 0px rgba(0,0,0,.1);
+	box-shadow: 0 1px 0px rgba(0,0,0,.1);
+
+	background: #72422E;
+	background: -webkit-gradient(linear, left top, left bottom, from(#BD775B), to(#72422E));
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#BD775B', endColorstr='#72422E'); /* ie7 */
+	-ms-filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#BD775B', endColorstr='#72422E');;
+	background-color: /* ie8 */ -moz-linear-gradient(top,#BD775B,#72422E)
+}
+.searchform input {
+	font: bold 12px/100% "Trebuchet MS", Tahoma, sans-serif;
+}
+.searchform .searchfield {
+	background: #fff;
+	padding: 6px 6px 6px 8px;
+	width: 202px;
+	border: solid 1px #72422E;
+	outline: none;
+
+	-webkit-border-radius: 2em;
+	-moz-border-radius: 2em;
+	border-radius: 2em;
+
+	-moz-box-shadow: inset 0 1px 2px rgba(0,0,0,.2);
+	-webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,.2);
+	box-shadow: inset 0 1px 2px rgba(0,0,0,.2);
+}
+.searchform .searchbutton {
+	color: #fff;
+	border: solid 1px #72422E;
+	font-size: 11px;
+	height: 27px;
+	width: 27px;
+	text-shadow: 0 1px 1px rgba(0,0,0,.6);
+	position: relative;
+	-webkit-border-radius: 2em;
+	-moz-border-radius: 2em;
+	border-radius: 2em;
+
+	background: #5f5f5f;
+	background: -webkit-gradient(linear, left top, left bottom, from(#F9062A), to(#cf2c33));
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#F9062A', endColorstr='#cf2c33'); /* ie7 */
+	-ms-filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#F9062A', endColorstr='#cf2c33');;
+	background-color: /* ie8 */ #cf2c33;
+}
+.header{
+	float:left;
+	height:94px;
+	font-size: 18px;
+	font-family: Helvetica;
+	color: #990000;
+	text-transform: uppercase;
+	font-weight: bold;
+	background-image: url('treenet_head.png');
+	}
+.topAreaBox {
+    background-image: url("https://image.treetop.com/webapp/headerTableBgV2.jpg");
+    height: 85px;
+    left: 0;
+    position: relative;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+	}
+
+.topAreaLogo {
+	width: 300px;
+	height: 80px;
+	float: left;;
+	margin-right: auto;
+	margin-bottom: 0;
+	margin-top: 0px;
+	margin-left: auto;
+	padding-top: 0px;
+	padding-left: 0px;
+	vertical-align: baseline;
+	}
+
+.topNavBk {
+	position: relative;
+	left: 0px;
+	width: 100%;
+	height: 30px;
+	z-index: 10;
+	vertical-align: bottom;
+	text-align: center;
+	line-height: 25px;
+	border-left-color: #26bc4f;
+	border-top-color: #488f44;
+	border-width: 1px;
+	border-bottom-color: #488f44;
+	border-right-color: #26bc4f;
+	border-style: solid;
+	
+	background: #26BC4F;
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#238b43', endColorstr='#26bc4f'); /* ie7 */
+	-ms-filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#238b43', endColorstr='#26bc4f');
+	background-color: /* ie8 */ #26BC4F;
+	}
+
+.topNav {
+	position: absolute;
+	left: 151px;
+	vertical-align:bottom;
+	line-height: 25px;
+	margin: auto;
+	}
+
+ .topNav, .topNav td, .topNav a {
+	font-size: 13px;
+	font-weight: bold;
+	letter-spacing: .05em;
+	height: 30px;
+	line-height: 30px;
+	min-width:50px;
+	}
+.topNav td {
+	padding: 2px 20px 0 0;
+	height: 30px;
+	}
+.topNav a {
+	color: #ffffff;					/* $Color 14 */
+	text-decoration: none;
+	}
+
+.navTrail {
+	font-size: 10px;
+	line-height: 16px;
+	color: #426696; 				/* $Color 9 */
+	}
+
+/* ----  Main Area ---- */
+
+.mainBox {
+	position: relative;
+	top: 137px;
+	margin: 0px;
+	padding:15px 70px;
+	width: 80%;
+}
+.mainWideBox {
+	position: absolute;
+	left: 30px;
+	top: 133px;
+	z-index: 5;
+	width: 95%;
+	}
+
+.leftNavTD {
+	width: 180px;
+	background-color: #e9f8ff; 	/* $Color 5 */
+}
+.leftNavBox {
+	position: relative;
+	float: left;
+	left: 15px;
+	top: 16px;
+	width: 160px;
+	z-index: 5;
+	line-height: 13px;
+	color: #7a7a7a;					/* $Color 2 */
+}
+.leftNavDIV_L1, .leftNavDIV_L2, .leftNavDIV_L3, .leftNavDIV_L4, .leftNavDIV_L5 { padding-bottom: 5px; }
+.leftNavDIV_L1 { margin-left: 0; }
+.leftNavDIV_L2 { margin-left: 15px; }
+.leftNavDIV_L3 { margin-left: 30px; }
+.leftNavDIV_L4 { margin-left: 45px; }
+.leftNavDIV_L5 { margin-left: 60px; }
+.leftNavDIV_L1 a, .leftNavDIV_L2 a, .leftNavDIV_L3 a, .leftNavDIV_L4 a, .leftNavDIV_L5 a {	color: #7a7a7a;	}	/* $Color 2  */
+.leftNav_Selected { font-weight: bold; color: #5C6166; }							/* $Color 10 */
+
+.mainContentTD {
+	width: 480px;
+}
+.mainContentBox {
+	position: relative;
+	left: 12px;
+	top: 16px;
+	z-index: 5;
+	width: 458px;
+}
+.mainContentWidth {
+	width: 458px;
+}
+.mainContentWideTD {
+}
+.mainContentWideBox {
+	position: relative;
+	left: 12px;
+	top: 16px;
+	z-index: 5;
+	width: 95%;
+}
+
+.rightColumnTD {
+	background-color: #f6f6f6 ; 	/* $Color 5a */
+	}
+.rightColumnBox {
+	position: relative;
+	left: 17px;
+	top: 16px;
+	width: 180px;
+	z-index: 5;
+	font-size: 11px;
+	line-height: 15px;
+	color: #808080;					/* $Color 15 */
+	}
+.footerold{
+    height: 30px;
+    margin: 15px 0;
+    padding: 10px 0;
+    width: 100%;
+    background-color:#F3FAFF;
+}
+/* ---- Optional Footer:  Displayed if a group assigned to the footer nav bar ---- */
+.footer {
+	background-color: transparent;
+	border-top: 1px solid #bebebe;	/* $Color 16 */
+	font-size: 10px;
+	margin: 20px 4px 40px 0px;
+	}
+.footer, .footer td, .footer a {
+	color: #9e7b6d;					/* $Color 15 */
+	}
+
+/* ---- Optional Top Right Navigation:  Displayed if a group assigned to the top right nav bar ---- */
+.topNavRight {
+	position: absolute;
+	left: 80%;
+	top: 42px;
+	width: 150px;
+	z-index: 5;
+	line-height: 1.4em;
+	}
+.topNavRight, .topNavRight li {
+	font-size: 12px;
+	font-weight: bold;
+	letter-spacing: .05em;
+	list-style-type: square;
+	color: #93acc4; 				/* $Color 3 */
+	}
+.topNavRight li a {
+	color: #ffffff;					/* $Color 14 */
+	text-decoration: none;
+	list-style-position: outside;
+	}
+.topNavRight li a:hover {
+	color: #ffffff;					/* $Color 14 */
+	text-decoration: underline;
+	list-style-position: outside;
+	}
+
+/* ----  Forms  ---- */
+form {
+	margin:0px;
+	padding:0px;
+}
+form .textInput { 
+	border: 1px solid #7a7a7a; 		/* $Color 18 */
+	background-color: #f6f6f6; 		/* $Color 6  */
+	color: #000000; 				/* $Color 17 */
+	font-size: 1.2em; 
+	padding-left: 3px; 
+}
+
+form .textArea {
+	font-family: "Trebuchet MS", Tahoma, sans-serif;
+	border: 1px solid #7a7a7a; 		/* $Color 18 */
+	background-color: #f6f6f6; 		/* $Color 6  */
+	color: #000000;  				/* $Color 17 */
+	font-size: 1.2em; 
+	padding-left: 3px; 
+	}
+
+form .button {
+	background-color: #7a7a7a; 		/* $Color 18 */
+	color: #ffffff;					/* $Color 14 */
+	border-width: 1px;	
+	border-style: solid;
+	border-left-color: #949494;		/* $Color 11 */
+	border-top-color: #949494;		/* $Color 11 */
+	border-bottom-color: #616161;	/* $Color 12 */
+	border-right-color: #616161;	/* $Color 12 */
+	font-size: 12px;
+	font-weight: bold;
+	height: 22px;
+	padding: 0px 5px 0px;
+	}
+
+form .textLabel {
+	color: #4d4d4d; 				/* $Color 13 */
+	}
+
+form .textLabelReq { 
+	font-weight: bold; 
+	color: #4d4d4d;					/* $Color 13 */
+	}
+
+/* ----  Sample Icons  ---- */
+
+/* Use as image: <img class="arrow" src="../images/1x1.gif"/> */
+img.arrow {
+	height: 12px;
+	width: 12px;
+	margin: 0 5px 0 0;
+	vertical-align: -2px;
+	background-color: #93acc4; 		/* $Color 3 */
+	background-image: url("arrow-graphic-up-clear.gif");
+}
+/* Use as link: <a class="arrow"href="#">...</a> */
+a.arrow, a.arrow:hover{
+	height: 12px;
+	width: 12px;
+	line-height:12px;
+	margin: 0 5px 0 0;
+	display: block;
+	background-color: #93acc4; 		/* $Color 3 */
+	background-image: url("arrow-graphic-up-clear.gif");
+}
+a.arrow:hover {
+	background-color: #809eba; 		/* $Color 4 */
+	text-decoration: none;
+}
+/* Other sample icon images */
+.otherImages {
+	background-image: url("arrow-graphic-down-clear.gif");
+	background-image: url("arrow-graphic-left-clear.gif");
+	background-image: url("arrow-graphic-right-clear.gif");
+	background-image: url("go-graphic-clear.gif");
+}
+
+
+.preload1 {background: url(three_1.gif);}
+.preload2 {background: url(three_1a.gif);}
+
+#nav {padding:0; margin:0; list-style:none; height:38px; background:#fff url(three_0.gif) repeat-x; position:relative; z-index:500; font-family:arial, verdana, sans-serif;}
+#nav li.top {display:block; float:left; height:38px;}
+#nav li a.top_link {display:block; float:left; height:35px; line-height:33px; color:#ccc; text-decoration:none; font-size:11px; font-weight:bold; padding:0 0 0 12px; cursor:pointer;background: url(three_0.gif);}
+#nav li a.top_link span {float:left; display:block; padding:0 24px 0 12px; height:35px; background: url(three_0.gif) right top no-repeat;}
+#nav li a.top_link span.down {float:left; display:block; padding:0 24px 0 12px; height:35px; background: url(three_0a.gif) no-repeat right top;}
+
+#nav li:hover a.top_link {color:#fff; background: url(three_1.gif) no-repeat;}
+#nav li:hover a.top_link span {background:url(three_1.gif) no-repeat right top;}
+#nav li:hover a.top_link span.down {background:url(three_1a.gif) no-repeat right top;}
+
+/* Default list styling */
+
+#nav li:hover {position:relative; z-index:200;}
+
+#nav li:hover ul.sub
+{left:1px; top:38px; background: #bbd37e; padding:3px; border:1px solid #5c731e; white-space:nowrap; width:90px; height:auto; z-index:300;}
+#nav li:hover ul.sub li
+{display:block; height:20px; position:relative; float:left; width:90px; font-weight:normal;}
+#nav li:hover ul.sub li a
+{display:block; font-size:11px; height:18px; width:88px; line-height:18px; text-indent:5px; color:#000; text-decoration:none;border:1px solid #bbd37e;}
+#nav li ul.sub li a.fly
+{background:#bbd37e url(arrow.gif) 80px 6px no-repeat;}
+#nav li:hover ul.sub li a:hover 
+{background:#6a812c; color:#fff; border-color:#fff;}
+#nav li:hover ul.sub li a.fly:hover
+{background:#6a812c url(arrow_over.gif) 80px 6px no-repeat; color:#fff;}
+
+
+#nav li:hover li:hover ul,
+#nav li:hover li:hover li:hover ul,
+#nav li:hover li:hover li:hover li:hover ul,
+#nav li:hover li:hover li:hover li:hover li:hover ul
+{left:90px; top:-4px; background: #bbd37e; padding:3px; border:1px solid #5c731e; white-space:nowrap; width:90px; z-index:400; height:auto;}
+
+#nav ul, 
+#nav li:hover ul ul,
+#nav li:hover li:hover ul ul,
+#nav li:hover li:hover li:hover ul ul,
+#nav li:hover li:hover li:hover li:hover ul ul
+{position:absolute; left:-9999px; top:-9999px; width:0; height:0; margin:0; padding:0; list-style:none;}
+
+#nav li:hover li:hover a.fly,
+#nav li:hover li:hover li:hover a.fly,
+#nav li:hover li:hover li:hover li:hover a.fly,
+#nav li:hover li:hover li:hover li:hover li:hover a.fly
+{background:#6a812c url(arrow_over.gif) 80px 6px no-repeat; color:#fff; border-color:#fff;} 
+
+#nav li:hover li:hover li a.fly,
+#nav li:hover li:hover li:hover li a.fly,
+#nav li:hover li:hover li:hover li:hover li a.fly
+{background:#bbd37e url(arrow.gif) 80px 6px no-repeat; color:#000; border-color:#bbd37e;} 
+
+/* -------------- jQuery datepicker month/year font fix ------------------ */
+.ui-datepicker .ui-datepicker-title select 
+{font-family:Arial, sans-serif ! important; width:35% ! important; }
+
+
+/* -------------- jQuery Select menu dropdown css ------------------ */
+.ui-selectmenu { display: block; position:relative; height:2em; text-decoration: none; overflow:hidden;}
+.ui-selectmenu-icon { position:absolute; right:6px; margin-top:-8px; top: 50%; }
+.ui-selectmenu-menu { padding:0; margin:0; list-style:none; position:absolute; top: 0; visibility: hidden; overflow: auto; }
+.ui-selectmenu-open { visibility: visible; }
+.ui-selectmenu-menu-popup { margin-top: -1px; }
+.ui-selectmenu-menu-dropdown { }
+.ui-selectmenu-menu li { padding:0; margin:0; display: block; border-top: 1px dotted transparent; border-bottom: 1px dotted transparent; border-right-width: 0 !important; border-left-width: 0 !important; font-weight: normal !important; }
+.ui-selectmenu-menu li a,.ui-selectmenu-status {line-height: 1.4em; display:block; padding:.3em 1em; outline:none; text-decoration:none; }
+.ui-selectmenu-menu li.ui-selectmenu-hasIcon a,
+.ui-selectmenu-hasIcon .ui-selectmenu-status { padding-left: 20px; position: relative; margin-left: 5px; }
+.ui-selectmenu-menu li .ui-icon, .ui-selectmenu-status .ui-icon { position: absolute; top: 1em; margin-top: -8px; left: 0; }
+.ui-selectmenu-status { line-height: 1.4em; }
+.ui-selectmenu-open li.ui-selectmenu-item-focus a {  }
+.ui-selectmenu-open li.ui-selectmenu-item-selected { }
+.ui-selectmenu-menu li span,.ui-selectmenu-status span { display:block; margin-bottom: .2em; }
+.ui-selectmenu-menu li .ui-selectmenu-item-header { font-weight: bold; }
+.ui-selectmenu-menu li .ui-selectmenu-item-content {  }
+.ui-selectmenu-menu li .ui-selectmenu-item-footer { opacity: .8; }
+.ui-selectmenu-menu .ui-selectmenu-group { font-size: 1em; }
+.ui-selectmenu-menu .ui-selectmenu-group .ui-selectmenu-group-label { line-height: 1.4em; display:block; padding:.6em .5em 0; font-weight: bold; }
+.ui-selectmenu-menu .ui-selectmenu-group ul { margin: 0; padding: 0; }
+.controlset {display: block; float:left; width: 100%; padding: 0.25em 0;}
+.controlset label, 
+.controlset input,
+.controlset div { display: inline; float: left; }
+.controlset label { width: 100px;}
+/* ---- Form Validations --------------------------------------------------------*/
+.ketchup-custom {line-height: 1em;display: none;}
+.ketchup-custom li {font-size: 10px;text-transform: uppercase;text-shadow: 1px 1px 0 #9F4631; border: 0;color: white;background: #F46644;padding: 1px 10px; margin-top: 1px;}
+/*----- TABLE --------------------------------------------------------------*/
+ table.table00   {width:100%; background-color:#FFFFFF; border-style:none}
+ table.table0001 {width:100%; background-color:#FFFFFF; border:1}
+ table.table0006 {width:100%; backgrount-color:#FFFFFF; border-bottom: 3px solid #003366;
+	 	border-top: 3px solid #003366; border-left: 3px solid #003366;
+		border-right: 3px solid #003366}
+/***----- TABLE ROW ----------------------------------------------------------***/
+ tr.tr00 {background-color:#FFFFFF; height:30px;}
+/***---- TABLE DATA ----------------------------------------------------------***/
+
+td.td0016     {font-family:arial; font-size:10pt; color:#FFFFFF; 
+		text-align:left}
+td.td0018     {font-family:arial; font-size:11pt; color:#FFFFFF; 
+		text-align:left}
+td.td0020     {font-family:arial; font-size:12pt; color:#FFFFFF; 
+		text-align:left}
+td.td0024     {font-family:arial; font-size:14pt; color:#FFFFFF; 
+		text-align:left}
+
+/*  Entire Row, has a Red Background   **/
+ td.td00100102 {font-size:7pt; font-family:arial; color:#FFFFFF; 
+	       text-align:left; border-bottom: 1px solid #DCDCDC}
+ td.td00120102 {font-size:8pt; font-family:arial; color:#FFFFFF; 
+	       text-align:left; border-bottom: 1px solid #DCDCDC}
+ td.td00140102 {font-size:9pt; font-family:arial; color:#FFFFFF; 
+	       text-align:left; border-bottom: 1px solid #DCDCDC}
+ td.td00160102 {font-size:10pt; font-family:arial; color:#FFFFFF; 
+	       text-align:left; border-bottom: 1px solid #DCDCDC}	
+
+/***		------------------------------------------		*****/
+/***		24 & 25 Both Light Grey and Navy Borders		*****/
+/***		03 - border bottom and right				*****/
+ td.td00100324 {font-family:arial; font-size:7pt; color:#FFFFFF; 
+		text-align:left; border-right: 1px solid #003366;
+		border-bottom: 1px solid #DCDCDC} 
+ td.td00120324 {font-family:arial; font-size:8pt; color:#FFFFFF; 
+		text-align:left; border-right: 1px solid #003366;
+		border-bottom: 1px solid #DCDCDC}
+ td.td00120324a {font-family:arial; font-size:8pt; color:#FFFFFF; 
+		text-align:left; border-right: 2px solid #003366;
+		border-bottom: 1px solid #DCDCDC}
+ td.td00120424b {font-family:arial; font-size:8pt; color:#FFFFFF; 
+		text-align:left; border-top: 2px solid #003366}	
+ td.td00120324c {font-family:arial; font-size:8pt; color:#FFFFFF; 
+		text-align:left; border-top: 3px solid #FFFFFF;
+		border-bottom: 1px solid #DCDCDC}
+ td.td00120424d {font-family:arial; font-size:8pt; color:#FFFFFF; 
+		text-align:left; border-top: 3px solid #FFFFFF}				
+ td.td00140324 {font-family:arial; font-size:9pt; color:#FFFFFF; 
+		text-align:left; border-right: 1px solid #003366;
+		border-bottom: 1px solid #DCDCDC}	
+ td.td00140324a {font-family:arial; font-size:9pt; color:#FFFFFF; 
+		text-align:left; border-right: 2px solid #003366;
+		border-bottom: 1px solid #DCDCDC}
+ td.td00140424b {font-family:arial; font-size:9pt; color:#FFFFFF; 
+		text-align:left; border-top: 2px solid #003366}	
+ td.td00140324c {font-family:arial; font-size:9pt; color:#FFFFFF; 
+		text-align:left; border-top: 3px solid #FFFFFF;
+		border-bottom: 1px solid #DCDCDC}
+ td.td00140424d {font-family:arial; font-size:9pt; color:#FFFFFF; 
+		text-align:left; border-top: 3px solid #FFFFFF}	
+ td.td00160324 {font-family:arial; font-size:10pt; color:#FFFFFF; 
+		text-align:left; border-right: 1px solid #003366;
+		border-bottom: 1px solid #DCDCDC}	
+ td.td00180324 {font-family:arial; font-size:11pt; color:#FFFFFF; 
+		text-align:left; border-right: 1px solid #003366;
+		border-bottom: 1px solid #DCDCDC}	
+/***            ------------------------------				*****/
+/***		No Borders                                              *****/ 
+/***		03 - Red Background					*****/
+ td.td0110000003 {font-size:7pt; font-family:arial; color:#FFFFFF; text-align:left; background-color:#990000}  
+ td.td0112000003 {font-size:8pt; font-family:arial; color:#FFFFFF; text-align:left; background-color:#990000}
+/***       Some Borders                                                 *****/   
+ td.td0114010203 {font-size:9pt; font-family:arial; color:#FFFFFF; text-align:left; 
+		border-bottom: 1px solid #DCDCDC; background-color:#990000}
+/***          050203 - Grey borders all sides, RED Background    ****/
+ td.td0114050203 {font-size:9pt; font-family:arial; color:#FFFFFF; 
+		text-align:left; border-bottom: 1px solid #DCDCDC;
+		border-right: 1px solid #DCDCDC; 
+		border-left: 1px solid #DCDCDC;
+		background-color: #990000}	
+ td.td0114042403 {font-size:9pt; font-family:arial; color:#FFFFFF; text-align:left; 
+		border-top: 1px solid #003366; border-bottom: 1px solid #DCDCDC; background-color:#990000}
+
+ td.td01141524 {font-family:arial; font-size:9pt; color:#FFFFFF; 
+		text-align:left; border-top: 1px solid #003366;
+		border-left: 1px solid #DCDCDC;
+		border-right: 1px solid #DCDCDC;
+		background-color:#990000} 	
+
+/***		05 - Navy Background					*****/
+ td.td0010000005 {font-size:7pt; font-family:arial; color:#FFFFFF; text-align:left; background-color:#003366}
+ td.td0012000005 {font-size:8pt; font-family:arial; color:#FFFFFF; text-align:left; background-color:#003366}
+ td.td0014000005 {font-size:9pt; font-family:arial; color:#FFFFFF; text-align:left; background-color:#003366}
+ td.td0016000005 {font-size:10pt; font-family:arial; color:#FFFFFF; text-align:left; background-color:#003366}
+ td.td0018000005 {font-size:11pt; font-family:arial; color:#FFFFFF; text-align:left; background-color:#003366}
+/****************************************************************************/
+/*  01  -  #F3FAFF  -  243.250.255  -  Pale Blue			    */
+/****************************************************************************/
+/*----- TABLE --------------------------------------------------------------*/
+ table.table01   {width:100%; background-color:#F3FAFF; border-style:none}
+ table.table0101 {width:100%; background-color:#F3FAFF; border:1px solid #dddddd;}
+/*----- TABLE ROW ----------------------------------------------------------*/
+ tr.tr01 {background-color:#F3FAFF}
+/*----- TABLE DATA ---------------------------------------------------------*/
+ td.td0114 {font-size:9pt; font-family:arial; color:#F3FAFF; text-align:left}
+ td.td0120 {font-size:12pt; font-family:arial; color:#F3FAFF; text-align:left}	
+/*******************     LINKS  (FONT)          *******************************/
+  a.a0112:active  {color:#FFFFFF} /*selected link   - White */
+  a.a0112:visited {color:#F3FAFF} /*visited link    - Pale Blue */
+  a.a0112:link    {color:#F3FAFF} /*unvisited link  - Pale Blue */
+  a.a0112:hover   {color:#FFFFFF} /*mouse over link - White */
+  a.a0112{font-family:arial; font-size:8pt;}
+
+/****************************************************************************/
+/*  02  -  #DCDCDC -  220.220.220  -  Light Grey			    */		
+/****************************************************************************/
+/*----- TABLE ROW ----------------------------------------------------------*/
+ tr.tr02 {    background-color: #F3FAFF !important;}
+/****************************************************************************/
+/*  03  -  #990000  -  153.000.000  -  Burgandy Red			    */
+/****************************************************************************/
+/*----- TABLE ROW ----------------------------------------------------------*/
+ tr.tr03 {background-color:#990000}
+/*----- TABLE DATA ---------------------------------------------------------*/
+/***		00 No Borders / No change of Background Color		*****/
+ td.td0310 {font-size:7pt; font-family:arial; color:#990000; text-align:left}	
+ td.td0312 {font-size:8pt; font-family:arial; color:#990000; text-align:left}
+ td.td0314 {font-size:9pt; font-family:arial; color:#990000; text-align:left}	
+ td.td0316 {font-size:10pt; font-family:arial; color:#990000; text-align:left}	
+ td.td0318 {font-size:11pt; font-family:arial; color:#990000; text-align:left}	
+ td.td0320 {font-size:12pt; font-family:arial; color:#990000; text-align:left}	
+ td.td0324 {font-size:14pt; font-family:arial; color:#990000; text-align:left}
+ td.td0328 {font-size:16pt: font-family:arial; color:#990000; text-aligh:left}
+/***            ------------------------------				*****/
+/***		02 Light Grey Colored Borders				*****/
+/***		01 - border bottom only					*****/
+  td.td03100102 {font-size:7pt; font-family:arial; color:#990000; 
+		text-align:left; border-bottom: 1px solid #DCDCDC}
+  td.td03120102 {font-size:8pt; font-family:arial; color:#990000; 
+		text-align:left; border-bottom: 1px solid #DCDCDC}
+  td.td03140102 {font-size:9pt; font-family:arial; color:#990000; 
+		text-align:left; border-bottom: 1px solid #DCDCDC}
+  td.td03160102 {font-size:10pt; font-family:arial; color:#990000; 
+		text-align:left; border-bottom: 1px solid #DCDCDC}
+  td.td03200102 {font-size:12pt; font-family:arial; color:#990000; 
+		text-align:left; border-bottom: 1px solid #DCDCDC}
+/***		04 - border bottom and top				*****/
+  td.td03100402 {font-size:7pt; font-family:arial; color:#990000; 
+		text-align:left; border-bottom: 1px solid #DCDCDC;
+		border-top: 1px solid #DCDCDC}
+  td.td03120402 {font-size:8pt; font-family:arial; color:#990000; 
+		text-align:left; border-bottom: 1px solid #DCDCDC;
+		border-top: 1px solid #DCDCDC}	
+  td.td03140402 {font-size:9pt; font-family:arial; color:#990000; 
+		text-align:left; border-bottom: 1px solid #DCDCDC;
+		border-top: 1px solid #DCDCDC}	
+  td.td03140405 {font-family:arial; font-size:9pt; color:#990000; 
+		text-align:left; border-top: 1px solid #003366;
+		border-bottom: 1px solid #003366}	
+/***            06 - Border All Around
+  td.td03140602 {font-size:9pt; font-family:arial; color:#990000; 
+		text-align:left; border-bottom: 1px solid #DCDCDC;
+		border-right: 1px solid #DCDCDC; 
+		border-left: 1px solid #DCDCDC;
+		border-top: 1px solid #DCDCDC}
+/***		05 Navy Colored Borders			 		*****/
+/***		01 - border bottom only					*****/
+ td.td03100105 {font-family:arial; font-size:7pt; color:#990000; 
+		text-align:left; border-bottom: 1px solid #003366}
+ td.td03120105 {font-family:arial; font-size:8pt; color:#990000; 
+		text-align:left; border-bottom: 1px solid #003366}	
+ td.td03140105 {font-family:arial; font-size:9pt; color:#990000; 
+		text-align:left; border-bottom: 1px solid #003366}
+ td.td03160105 {font-family:arial; font-size:10pt; color:#990000; 
+		text-align:left; border-bottom: 1px solid #003366}
+ td.td03180105 {font-family:arial; font-size:11pt; color:#990000; 
+		text-align:left; border-bottom: 1px solid #003366}	
+ td.td03200105 {font-family:arial; font-size:12pt; color:#990000; 
+		text-align:left; border-bottom: 1px solid #003366}
+/***		14 - border top only					*****/
+  td.td03141405 {font-family:arial; font-size:9pt; color:#990000; 
+		text-align:left; border-top: 1px solid #003366}
+  td.td03201404 {font-family:arial; font-size:12pt; color:#990000; 
+		text-align:left; border-top: 1px solid #003366}
+
+/***		73 - border bottom and right (DARK)				*****/
+  td.td03167324 {font-family:arial; font-size:10pt; color:#990000; 
+		text-align:left; border-right: 2px solid #003366;
+		border-bottom: 1px solid #DCDCDC}	
+/***		------------------------------------------		*****/
+/***		24 & 25 Both Light Grey and Navy Borders		*****/
+/***		03 - border bottom and right				*****/
+ td.td03100324 {font-family:arial; font-size:7pt; color:#990000; 
+		text-align:left; border-right: 1px solid #003366;
+		border-bottom: 1px solid #DCDCDC} 
+ td.td03120324 {font-family:arial; font-size:8pt; color:#990000; 
+		text-align:left; border-right: 1px solid #003366;
+		border-bottom: 1px solid #DCDCDC}	
+ td.td03140324 {font-family:arial; font-size:9pt; color:#990000; 
+		text-align:left; border-right: 1px solid #003366;
+		border-bottom: 1px solid #DCDCDC}	
+/***		04 - border bottom and top				*****/
+
+  td.td03140424 {font-family:arial; font-size:9pt; color:#990000; 
+		text-align:left; border-top: 1px solid #003366;
+		border-bottom: 1px solid #DCDCDC}		
+
+
+/*******************     LINKS  (FONT)          *******************************/
+  a.a0320:active  {color:#003366} /*selected link   - Navy */
+  a.a0320:visited {color:#990000} /*visited link    - Red   */
+  a.a0320:link    {color:#990000} /*unvisited link  - Red   */
+  a.a0320:hover   {color:#003366} /*mouse over link - Navy */
+  a.a0320{font-family:arial; font-size:12pt;}
+/****************************************************************************/
+/*  04  -  #000000  -  000.000.000  -  Black				    */
+/****************************************************************************/
+/*----- TABLE ROW ----------------------------------------------------------*/
+ tr.tr04 {background-color:#000000}
+/*----- TABLE DATA ---------------------------------------------------------*/
+/***		00 No Borders / No change of Background Color		*****/
+ td.td0410 {font-size:7pt; font-family:arial; color:#000000; text-align:left}	
+ td.td0412 {font-size:8pt; font-family:arial; color:#000000; text-align:left}
+ td.td0414 {font-size:9pt; font-family:arial; color:#000000; text-align:left}	
+ td.td0416 {font-size:10pt; font-family:arial; color:#000000; text-align:left}	
+ td.td0418 {font-size:11pt; font-family:arial; color:#000000; text-align:left}	
+ td.td0420 {font-size:12pt; font-family:arial; color:#000000; text-align:left}	
+ td.td0424 {font-size:14pt; font-family:arial; color:#000000; text-align:left}
+ td.td0428 {font-size:16pt: font-family:arial; color:#000000; text-aligh:left}
+/*** no borders.. make the background be white                         ***/    
+ td.td041000 {font-size:7pt; font-family:arial; color:#000000; text-align:left;
+            background-color: #FFFFFF}
+ td.td041200{font-size:8pt; font-family:arial; color:#000000; text-align:left;
+            background-color: #FFFFFF}
+ td.td041400 {font-size:9pt; font-family:arial; color:#000000; text-align:left;
+            background-color: #FFFFFF}
+ td.td041600 {font-size:10pt; font-family:arial; color:#000000; text-align:left;
+            background-color: #FFFFFF}
+ td.td041800 {font-size:11pt; font-family:arial; color:#000000; text-align:left;
+            background-color: #FFFFFF}	
+ td.td042000 {font-size:12pt; font-family:arial; color:#000000; text-align:left;
+            background-color: #FFFFFF}
+ td.td042400 {font-size:14pt; font-family:arial; color:#000000; text-align:left;
+            background-color: #FFFFFF}
+ td.td042800 {font-size:16pt: font-family:arial; color:#000000; text-aligh:left;
+            background-color: #FFFFFF}
+/***	        ------------------------------				*****/
+/***		02 Light Grey Colored Borders				*****/
+/***		01 - border bottom only					*****/
+ td.td04100102 {font-size:7pt; font-family:arial; color:#000000; 
+		text-align:left; border-bottom: 1px solid #DCDCDC}
+ td.td04120102 {font-size:8pt; font-family:arial; color:#000000; 
+		text-align:left; border-bottom: 1px solid #DCDCDC}	
+ td.td04140102 {font-size:9pt; font-family:arial; color:#000000; 
+		text-align:left; border-bottom: 1px solid #DCDCDC}	
+ td.td04160102 {font-size:10pt; font-family:arial; color:#000000; 
+		text-align:left; border-bottom: 1px solid #DCDCDC}	
+ td.td04180102 {font-size:11pt; font-family:arial; color:#000000; 
+		text-align:left; border-bottom: 1px solid #DCDCDC}	
+ td.td04200102 {font-size:12pt; font-family:arial; color:#000000; 
+		text-align:left; border-bottom: 1px solid #DCDCDC}
+ td.td04240102 {font-size:14pt; font-family:arial; color:#000000; 
+		text-align:left; border-bottom: 1px solid #DCDCDC}	
+ td.td04280102 {font-size:16pt; font-family:arial; color:#000000; 
+		text-align:left; border-bottom: 1px solid #DCDCDC}	
+/***		0201 - border bottom - Light Blue Background		*****/
+ td.td0410010201 {font-size:7pt; font-family:arial; color:#000000; 
+		text-align:left; border-bottom: 1px solid #DCDCDC;
+		background-color: #F3FAFF} 
+ td.td0412010201 {font-size:8pt; font-family:arial; color:#000000; 
+		text-align:left; border-bottom: 1px solid #DCDCDC;
+		background-color: #F3FAFF}
+ td.td0414010201 {font-size:9pt; font-family:arial; color:#000000; 
+		text-align:left; border-bottom: 1px solid #DCDCDC;
+		background-color: #F3FAFF} 
+ td.td0416010201 {font-size:10pt; font-family:arial; color:#000000; 
+		text-align:left; border-bottom: 1px solid #DCDCDC;
+		background-color: #F3FAFF}
+ td.td0418010201 {font-size:11pt; font-family:arial; color:#000000; 
+		text-align:left; border-bottom: 1px solid #DCDCDC;
+		background-color: #F3FAFF} 
+ td.td0420010201 {font-size:12pt; font-family:arial; color:#000000; 
+		text-align:left; border-bottom: 1px solid #DCDCDC;
+		background-color: #F3FAFF}
+/***		0201 - border bottom - Light Blue Background		*****/
+ td.td0410010202 {font-size:7pt; font-family:arial; color:#000000; 
+		text-align:left; border-bottom: 1px solid #DCDCDC;
+		background-color: #DCDCDC} 
+ td.td0412010202 {font-size:8pt; font-family:arial; color:#000000; 
+		text-align:left; border-bottom: 1px solid #DCDCDC;
+		background-color: #DCDCDC}
+ td.td0414010202 {font-size:9pt; font-family:arial; color:#000000; 
+		text-align:left; border-bottom: 1px solid #DCDCDC;
+		background-color: #DCDCDC} 
+ td.td0416010202 {font-size:10pt; font-family:arial; color:#000000; 
+		text-align:left; border-bottom: 1px solid #DCDCDC;
+		background-color: #DCDCDC}
+ td.td0418010202 {font-size:11pt; font-family:arial; color:#000000; 
+		text-align:left; border-bottom: 1px solid #DCDCDC;
+		background-color: #DCDCDC} 
+ td.td0420010202 {font-size:12pt; font-family:arial; color:#000000; 
+		text-align:left; border-bottom: 1px solid #DCDCDC;
+		background-color: #DCDCDC}
+/***		0201 - border bottom - Med Blue Background		*****/
+ td.td0410010206 {font-size:7pt; font-family:arial; color:#000000; 
+		text-align:left; border-bottom: 1px solid #DCDCDC;
+		background-color: #C3E7FF} 
+ td.td0412010206 {font-size:8pt; font-family:arial; color:#000000; 
+		text-align:left; border-bottom: 1px solid #DCDCDC;
+		background-color: #C3E7FF}
+ td.td0414010206 {font-size:9pt; font-family:arial; color:#000000; 
+		text-align:left; border-bottom: 1px solid #DCDCDC;
+		background-color: #C3E7FF} 
+ td.td0416010206 {font-size:10pt; font-family:arial; color:#000000; 
+		text-align:left; border-bottom: 1px solid #DCDCDC;
+		background-color: #C3E7FF}
+ td.td0418010206 {font-size:11pt; font-family:arial; color:#000000; 
+		text-align:left; border-bottom: 1px solid #DCDCDC;
+		background-color: #C3E7FF} 
+ td.td0420010206 {font-size:12pt; font-family:arial; color:#000000; 
+		text-align:left; border-bottom: 1px solid #DCDCDC;
+		background-color: #C3E7FF}
+/***		02 - border bottom and left				*****/
+ td.td04100202 {font-size:7pt; font-family:arial; color:#000000; 
+	        text-align:left; border-bottom: 1px solid #DCDCDC;
+		border-left: 1px solid #DCDCDC}
+ td.td04120202 {font-size:8pt; font-family:arial; color:#000000; 
+		text-align:left; border-bottom: 1px solid #DCDCDC;
+		border-left: 1px solid #DCDCDC}	
+ td.td04140202 {font-size:9pt; font-family:arial; color:#000000; 
+		text-align:left; border-bottom: 1px solid #DCDCDC;
+		border-left: 1px solid #DCDCDC}	
+ td.td04160202 {font-size:10pt; font-family:arial; color:#000000; 
+		text-align:left; border-bottom: 1px solid #DCDCDC;
+		border-left: 1px solid #DCDCDC}	
+ td.td04180202 {font-size:11pt; font-family:arial; color:#000000; 
+		text-align:left; border-bottom: 1px solid #DCDCDC;
+		border-left: 1px solid #DCDCDC}	
+ td.td04200202 {font-size:12pt; font-family:arial; color:#000000; 
+		text-align:left; border-bottom: 1px solid #DCDCDC;
+		border-left: 1px solid #DCDCDC}	
+/***		03 - border bottom and right				*****/
+ td.td04100302 {font-size:7pt; font-family:arial; color:#000000; 
+		text-align:left; border-bottom: 1px solid #DCDCDC;
+		border-right: 1px solid #DCDCDC}
+ td.td04120302 {font-size:8pt; font-family:arial; color:#000000; 
+		text-align:left; border-bottom: 1px solid #DCDCDC;
+		border-right: 1px solid #DCDCDC}	
+ td.td04140302 {font-size:9pt; font-family:arial; color:#000000; 
+		text-align:left; border-bottom: 1px solid #DCDCDC;
+		border-right: 1px solid #DCDCDC}	
+ td.td04160302 {font-size:10pt; font-family:arial; color:#000000; 
+		text-align:left; border-bottom: 1px solid #DCDCDC;
+		border-right: 1px solid #DCDCDC}	
+ td.td04180302 {font-size:11pt; font-family:arial; color:#000000; 
+		text-align:left; border-bottom: 1px solid #DCDCDC;
+		border-right: 1px solid #DCDCDC}	
+ td.td04200302 {font-size:12pt; font-family:arial; color:#000000; 
+		text-align:left; border-bottom: 1px solid #DCDCDC;
+		border-right: 1px solid #DCDCDC}	
+/***		04 - border bottom and top				*****/
+ td.td04100402 {font-size:7pt; font-family:arial; color:#000000; 
+		text-align:left; border-bottom: 1px solid #DCDCDC;
+		border-top: 1px solid #DCDCDC}
+ td.td04120402 {font-size:8pt; font-family:arial; color:#000000; 
+		text-align:left; border-bottom: 1px solid #DCDCDC;
+		border-top: 1px solid #DCDCDC}	
+ td.td04140402 {font-size:9pt; font-family:arial; color:#000000; 
+		text-align:left; border-bottom: 1px solid #DCDCDC;
+		border-top: 1px solid #DCDCDC}	
+ td.td04160402 {font-size:10pt; font-family:arial; color:#000000; 
+		text-align:left; border-bottom: 1px solid #DCDCDC;
+		border-top: 1px solid #DCDCDC}	
+ td.td04180402 {font-size:11pt; font-family:arial; color:#000000; 
+		text-align:left; border-bottom: 1px solid #DCDCDC;
+		border-top: 1px solid #DCDCDC}	
+ td.td04200402 {font-size:12pt; font-family:arial; color:#000000; 
+		text-align:left; border-bottom: 1px solid #DCDCDC;
+		border-top: 1px solid #DCDCDC}	
+/***		05 - border bottom and right and left			*****/
+ td.td04100502 {font-size:7pt; font-family:arial; color:#000000; 
+		text-align:left; border-bottom: 1px solid #DCDCDC;
+		border-right: 1px solid #DCDCDC; 
+		border-left: 1px solid #DCDCDC}
+ td.td04120502 {font-size:8pt; font-family:arial; color:#000000; 
+		text-align:left; border-bottom: 1px solid #DCDCDC;
+		border-right: 1px solid #DCDCDC; 
+		border-left: 1px solid #DCDCDC}	
+ td.td04140502 {font-size:9pt; font-family:arial; color:#000000; 
+		text-align:left; border-bottom: 1px solid #DCDCDC;
+		border-right: 1px solid #DCDCDC; 
+		border-left: 1px solid #DCDCDC}	
+ td.td04160502 {font-size:10pt; font-family:arial; color:#000000; 
+		text-align:left; border-bottom: 1px solid #DCDCDC;
+		border-right: 1px solid #DCDCDC; 
+		border-left: 1px solid #DCDCDC}	
+ td.td04180502 {font-size:11pt; font-family:arial; color:#000000; 
+		text-align:left; border-bottom: 1px solid #DCDCDC;
+		border-right: 1px solid #DCDCDC; 
+		border-left: 1px solid #DCDCDC}	
+ td.td04200502 {font-size:12pt; font-family:arial; color:#000000; 
+		text-align:left; border-bottom: 1px solid #DCDCDC;
+		border-right: 1px solid #DCDCDC; 
+		border-left: 1px solid #DCDCDC}	
+
+/***		06 - border All Sides          				*****/
+ td.td04100602 {font-size:7pt; font-family:arial; color:#000000; 
+		text-align:left; border-bottom: 1px solid #DCDCDC;
+		border-right: 1px solid #DCDCDC; 
+		border-left: 1px solid #DCDCDC;
+		border-top: 1px solid #DCDCDC}
+ td.td04120602 {font-size:8pt; font-family:arial; color:#000000; 
+		text-align:left; border-bottom: 1px solid #DCDCDC;
+		border-right: 1px solid #DCDCDC; 
+		border-left: 1px solid #DCDCDC;
+		border-top: 1px solid #DCDCDC}
+ td.td04140602 {font-size:9pt; font-family:arial; color:#000000; 
+		text-align:left; border-bottom: 1px solid #DCDCDC;
+		border-right: 1px solid #DCDCDC; 
+		border-left: 1px solid #DCDCDC;
+		border-top: 1px solid #DCDCDC}
+ td.td04160602 {font-size:9pt; font-family:arial; color:#000000; 
+		text-align:left; border-bottom: 1px solid #DCDCDC;
+		border-right: 1px solid #DCDCDC; 
+		border-left: 1px solid #DCDCDC;
+		border-top: 1px solid #DCDCDC}
+/***		0602 - border All Sides - Grey Background		*****/
+ td.td0410060202 {font-size:7pt; font-family:arial; color:#000000; 
+		text-align:left; border-bottom: 1px solid #DCDCDC;
+		border-right: 1px solid #DCDCDC; 
+		border-left: 1px solid #DCDCDC;
+		border-top: 1px solid #DCDCDC;
+		background-color: #DCDCDC}
+ td.td0412060202 {font-size:8pt; font-family:arial; color:#000000; 
+		text-align:left; border-bottom: 1px solid #DCDCDC;
+		border-right: 1px solid #DCDCDC; 
+		border-left: 1px solid #DCDCDC;
+		border-top: 1px solid #DCDCDC;
+		background-color: #DCDCDC}
+ td.td0414060202 {font-size:9pt; font-family:arial; color:#000000; 
+		text-align:left; border-bottom: 1px solid #DCDCDC;
+		border-right: 1px solid #DCDCDC; 
+		border-left: 1px solid #DCDCDC;
+		border-top: 1px solid #DCDCDC;
+		background-color: #DCDCDC}
+/***		09 - border bottom and top and left			*****/
+ td.td04100902 {font-size:7pt; font-family:arial; color:#000000; 
+		text-align:left; border-bottom: 1px solid #DCDCDC;
+		border-top: 1px solid #DCDCDC; 
+		border-left: 1px solid #DCDCDC}
+ td.td04120902 {font-size:8pt; font-family:arial; color:#000000; 
+		text-align:left; border-bottom: 1px solid #DCDCDC;
+		border-top: 1px solid #DCDCDC; 
+		border-left: 1px solid #DCDCDC}	
+ td.td04140902 {font-size:9pt; font-family:arial; color:#000000; 
+		text-align:left; border-bottom: 1px solid #DCDCDC;
+		border-top: 1px solid #DCDCDC; 
+		border-left: 1px solid #DCDCDC}	
+ td.td04160902 {font-size:10pt; font-family:arial; color:#000000; 
+		text-align:left; border-bottom: 1px solid #DCDCDC;
+		border-top: 1px solid #DCDCDC; 
+		border-left: 1px solid #DCDCDC}	
+ td.td04180902 {font-size:11pt; font-family:arial; color:#000000; 
+		text-align:left; border-bottom: 1px solid #DCDCDC;
+		border-top: 1px solid #DCDCDC; 
+		border-left: 1px solid #DCDCDC}	
+ td.td04200902 {font-size:12pt; font-family:arial; color:#000000; 
+		text-align:left; border-bottom: 1px solid #DCDCDC;
+		border-top: 1px solid #DCDCDC; 
+		border-left: 1px solid #DCDCDC}
+/***		10 - border bottom and top and right			*****/
+ td.td04101002 {font-size:7pt; font-family:arial; color:#000000; 
+		text-align:left; border-bottom: 1px solid #DCDCDC;
+		border-top: 1px solid #DCDCDC; 
+		border-right: 1px solid #DCDCDC}
+ td.td04121002 {font-size:8pt; font-family:arial; color:#000000; 
+		text-align:left; border-bottom: 1px solid #DCDCDC;
+		border-top: 1px solid #DCDCDC; 
+		border-right: 1px solid #DCDCDC}	
+ td.td04141002 {font-size:9pt; font-family:arial; color:#000000; 
+		text-align:left; border-bottom: 1px solid #DCDCDC;
+		border-top: 1px solid #DCDCDC; 
+		border-right: 1px solid #DCDCDC}	
+ td.td04161002 {font-size:10pt; font-family:arial; color:#000000; 
+		text-align:left; border-bottom: 1px solid #DCDCDC;
+		border-top: 1px solid #DCDCDC; 
+		border-right: 1px solid #DCDCDC}	
+ td.td04181002 {font-size:11pt; font-family:arial; color:#000000; 
+		text-align:left; border-bottom: 1px solid #DCDCDC;
+		border-top: 1px solid #DCDCDC; 
+		border-right: 1px solid #DCDCDC}	
+ td.td04201002 {font-size:12pt; font-family:arial; color:#000000; 
+		text-align:left; border-bottom: 1px solid #DCDCDC;
+		border-top: 1px solid #DCDCDC; 
+		border-right: 1px solid #DCDCDC}
+/***            11 - Right and Left Borders Only                *****/
+ td.td04101102 {font-size:7pt; font-family:arial; color:#000000; 
+		text-align:left; 
+		border-left: 1px solid #DCDCDC; 
+		border-right: 1px solid #DCDCDC}
+ td.td04121102 {font-size:8pt; font-family:arial; color:#000000; 
+		text-align:left; 
+		border-left: 1px solid #DCDCDC; 
+		border-right: 1px solid #DCDCDC}	
+ td.td04141102 {font-size:9pt; font-family:arial; color:#000000; 
+		text-align:left; 
+		border-left: 1px solid #DCDCDC; 
+		border-right: 1px solid #DCDCDC}	
+ td.td04161102 {font-size:10pt; font-family:arial; color:#000000; 
+		text-align:left; 
+		border-left: 1px solid #DCDCDC; 
+		border-right: 1px solid #DCDCDC}	
+ td.td04181102 {font-size:11pt; font-family:arial; color:#000000; 
+		text-align:left; 
+		border-left: 1px solid #DCDCDC; 
+		border-right: 1px solid #DCDCDC}	
+ td.td04201102 {font-size:12pt; font-family:arial; color:#000000; 
+		text-align:left; 
+		border-left: 1px solid #DCDCDC; 
+		border-right: 1px solid #DCDCDC}
+/***            12 - Left Borders Only                        *****/
+ td.td04101202 {font-size:7pt; font-family:arial; color:#000000; 
+		text-align:left; 
+		border-left: 1px solid #DCDCDC}
+ td.td04121202 {font-size:8pt; font-family:arial; color:#000000; 
+		text-align:left; 
+		border-left: 1px solid #DCDCDC}	
+ td.td04141202 {font-size:9pt; font-family:arial; color:#000000; 
+		text-align:left; 
+		border-left: 1px solid #DCDCDC}	
+ td.td04161202 {font-size:10pt; font-family:arial; color:#000000; 
+		text-align:left; 
+		border-left: 1px solid #DCDCDC}	
+ td.td04181202 {font-size:11pt; font-family:arial; color:#000000; 
+		text-align:left; 
+		border-left: 1px solid #DCDCDC}	
+ td.td04201202 {font-size:12pt; font-family:arial; color:#000000; 
+		text-align:left; 
+		border-left: 1px solid #DCDCDC}
+/***            13 - Right Borders Only                *****/
+ td.td04101302 {font-size:7pt; font-family:arial; color:#000000; 
+		text-align:left; 
+		border-right: 1px solid #DCDCDC}
+ td.td04121302 {font-size:8pt; font-family:arial; color:#000000; 
+		text-align:left; 
+		border-right: 1px solid #DCDCDC}	
+ td.td04141302 {font-size:9pt; font-family:arial; color:#000000; 
+		text-align:left; 
+		border-right: 1px solid #DCDCDC}	
+ td.td04161302 {font-size:10pt; font-family:arial; color:#000000; 
+		text-align:left; 
+		border-right: 1px solid #DCDCDC}	
+ td.td04181302 {font-size:11pt; font-family:arial; color:#000000; 
+		text-align:left; 
+		border-right: 1px solid #DCDCDC}	
+ td.td04201302 {font-size:12pt; font-family:arial; color:#000000; 
+		text-align:left; 
+		border-right: 1px solid #DCDCDC}
+/***		14 - border top only				*****/
+ td.td04101402 {font-size:7pt; font-family:arial; color:#000000; 
+		text-align:left; border-top: 1px solid #DCDCDC}
+ td.td04121402 {font-size:8pt; font-family:arial; color:#000000; 
+		text-align:left; border-top: 1px solid #DCDCDC}	
+ td.td04141402 {font-size:9pt; font-family:arial; color:#000000; 
+		text-align:left; border-top: 1px solid #DCDCDC}	
+ td.td04161402 {font-size:10pt; font-family:arial; color:#000000; 
+		text-align:left; border-top: 1px solid #DCDCDC}	
+ td.td04181402 {font-size:11pt; font-family:arial; color:#000000; 
+		text-align:left; border-top: 1px solid #DCDCDC}	
+ td.td04201402 {font-size:12pt; font-family:arial; color:#000000; 
+		text-align:left; border-top: 1px solid #DCDCDC}				
+/***            ------------------------------				*****/
+/***		05 Navy Colored Borders		 		*****/
+/***		01 - border bottom only					*****/
+ td.td04100105 {font-family:arial; font-size:7pt; color:#000000; 
+		text-align:left; border-bottom: 1px solid #003366}
+ td.td04120105 {font-family:arial; font-size:8pt; color:#000000; 
+		text-align:left; border-bottom: 1px solid #003366}	
+ td.td04140105 {font-family:arial; font-size:9pt; color:#000000; 
+		text-align:left; border-bottom: 1px solid #003366}	
+ td.td04160105 {font-family:arial; font-size:10pt; color:#000000; 
+		text-align:left; border-bottom: 1px solid #003366}	
+ td.td04180105 {font-family:arial; font-size:11pt; color:#000000; 
+		text-align:left; border-bottom: 1px solid #003366}	
+ td.td04200105 {font-family:arial; font-size:12pt; color:#000000; 
+		text-align:left; border-bottom: 1px solid #003366}
+
+/***		04 - border bottom and top				*****/
+ td.td04100405 {font-family:arial; font-size:7pt; color:#000000; 
+		text-align:left; border-top: 1px solid #003366;
+		border-bottom: 1px solid #003366} 
+ td.td04120405 {font-family:arial; font-size:8pt; color:#000000; 
+		text-align:left; border-top: 1px solid #003366;
+		border-bottom: 1px solid #003366}	
+ td.td04140405 {font-family:arial; font-size:9pt; color:#000000; 
+		text-align:left; border-top: 1px solid #003366;
+		border-bottom: 1px solid #003366}	
+ td.td04160405 {font-family:arial; font-size:10pt; color:#000000; 
+		text-align:left; border-top: 1px solid #003366;
+		border-bottom: 1px solid #003366}	
+ td.td04180405 {font-family:arial; font-size:11pt; color:#000000; 
+		text-align:left; border-top: 1px solid #003366;
+		border-bottom: 1px solid #003366}	
+ td.td04200405 {font-family:arial; font-size:12pt; color:#000000; 
+		text-align:left; border-top: 1px solid #003366;
+		border-bottom: 1px solid #003366}
+ td.td04240405 {font-family:arial; font-size:14pt; color:#000000; 
+		text-align:left; border-top: 1px solid #003366;
+		border-bottom: 1px solid #003366}
+/***		05 - border bottom and right and left			*****/
+ td.td04100505 {font-family:arial; font-size:7pt; color:#000000; 
+		text-align:left; border-bottom: 1px solid #003366;
+		border-left: 1px solid #003366;
+		border-right: 1px solid #003366} 
+/***		06 - border bottom, top, left and right			*****/
+ td.td04100605 {font-family:arial; font-size:7pt; color:#000000; 
+		text-align:left; border-top: 1px solid #003366;
+		border-bottom: 1px solid #003366;
+		border-left: 1px solid #003366;
+		border-right: 1px solid #003366} 
+ td.td04120605 {font-family:arial; font-size:8pt; color:#000000; 
+		text-align:left; border-top: 1px solid #003366;
+		border-bottom: 1px solid #003366;
+		border-left: 1px solid #003366;
+		border-right: 1px solid #003366} 
+ td.td04140605 {font-family:arial; font-size:9pt; color:#000000; 
+		text-align:left; border-top: 1px solid #003366;
+		border-bottom: 1px solid #003366;
+		border-left: 1px solid #003366;
+		border-right: 1px solid #003366} 
+ td.td04160605 {font-family:arial; font-size:10pt; color:#000000; 
+		text-align:left; border-top: 1px solid #003366;
+		border-bottom: 1px solid #003366;
+		border-left: 1px solid #003366;
+		border-right: 1px solid #003366} 
+ td.td04180605 {font-family:arial; font-size:11pt; color:#000000; 
+		text-align:left; border-top: 1px solid #003366;
+		border-bottom: 1px solid #003366;
+		border-left: 1px solid #003366;
+		border-right: 1px solid #003366} 
+ td.td04200605 {font-family:arial; font-size:12pt; color:#000000; 
+		text-align:left; border-top: 1px solid #003366;
+		border-bottom: 1px solid #003366;
+		border-left: 1px solid #003366;
+		border-right: 1px solid #003366} 
+ td.td04240605 {font-family:arial; font-size:14pt; color:#000000; 
+		text-align:left; border-top: 1px solid #003366;
+		border-bottom: 1px solid #003366;
+		border-left: 1px solid #003366;
+		border-right: 1px solid #003366} 
+
+ td.td0414060202 {font-size:9pt; font-family:arial; color:#000000; 
+		text-align:left; border-bottom: 1px solid #003366;
+		border-right: 1px solid #003366; 
+		border-left: 1px solid #003366;
+		border-top: 1px solid #003366;
+		background-color: #DCDCDC}
+/***		07 - border bottom and top with bottom double		*****/
+ td.td04100705 {font-family:arial; font-size:7pt; color:#000000; 
+		text-align:left; border-top: 1px solid #003366;
+		border-bottom: 1px double #003366} 
+ td.td04120705 {font-family:arial; font-size:8pt; color:#000000; 
+		text-align:left; border-top: 1px solid #003366;
+		border-bottom: 1px double #003366}	
+ td.td04140705 {font-family:arial; font-size:9pt; color:#000000; 
+		text-align:left; border-top: 1px solid #003366;
+		border-bottom: 1px double #003366}	
+ td.td04160705 {font-family:arial; font-size:10pt; color:#000000; 
+		text-align:left; border-top: 1px solid #003366;
+		border-bottom: 1px double #003366}	
+ td.td04180705 {font-family:arial; font-size:11pt; color:#000000; 
+		text-align:left; border-top: 1px solid #003366;
+		border-bottom: 1px double #003366}	
+ td.td04200705 {font-family:arial; font-size:12pt; color:#000000; 
+		text-align:left; border-top: 1px solid #003366;
+		border-bottom: 1px double #003366}	
+/***		08 - border bottom and top with top double		*****/
+ td.td04100805 {font-family:arial; font-size:7pt; color:#000000; 
+		text-align:left; border-bottom: 1px solid #003366;
+		border-top: 1px double #003366} 
+ td.td04120805 {font-family:arial; font-size:8pt; color:#000000; 
+		text-align:left; border-bottom: 1px solid #003366;
+		border-top: 1px double #003366}	
+ td.td04140805 {font-family:arial; font-size:9pt; color:#000000; 
+		text-align:left; border-bottom: 1px solid #003366;
+		border-top: 1px double #003366}	
+ td.td04160805 {font-family:arial; font-size:10pt; color:#000000; 
+		text-align:left; border-bottom: 1px solid #003366;
+		border-top: 1px double #003366}	
+ td.td04180805 {font-family:arial; font-size:11pt; color:#000000; 
+		text-align:left; border-bottom: 1px solid #003366;
+		border-top: 1px double #003366}	
+ td.td04200805 {font-family:arial; font-size:12pt; color:#000000; 
+		text-align:left; border-bottom: 1px solid #003366;
+		border-top: 1px double #003366}
+/***		09 - border left, bottom and top			*****/
+ td.td04100905 {font-family:arial; font-size:7pt; color:#000000; 
+		text-align:left; border-left: 1px solid #003366;
+		border-top: 1px solid #003366;
+		border-bottom: 1px double #003366} 
+/***		10 - border right, bottom and top			*****/
+ td.td04101005 {font-family:arial; font-size:7pt; color:#000000; 
+		text-align:left; border-right: 1px solid #003366;
+		border-top: 1px solid #003366;
+		border-bottom: 1px double #003366} 
+/***		11 - border right and left				*****/
+ td.td04101105 {font-family:arial; font-size:7pt; color:#000000; 
+		text-align:left; border-right: 1px solid #003366;
+		border-left: 1px solid #003366} 
+/***		12 - border left					*****/
+ td.td04101205 {font-family:arial; font-size:7pt; color:#000000; 
+		text-align:left; border-left: 1px solid #003366} 
+/***		13 - border right					*****/
+ td.td04101305 {font-family:arial; font-size:7pt; color:#000000; 
+		text-align:left; border-right: 1px solid #003366} 
+/***		14 - border top only					*****/
+ td.td04101405 {font-family:arial; font-size:7pt; color:#000000; 
+		text-align:left; border-top: 1px solid #003366}
+ td.td04121405 {font-family:arial; font-size:8pt; color:#000000; 
+		text-align:left; border-top: 1px solid #003366}	
+ td.td04141405 {font-family:arial; font-size:9pt; color:#000000; 
+		text-align:left; border-top: 1px solid #003366}	
+ td.td04161405 {font-family:arial; font-size:10pt; color:#000000; 
+		text-align:left; border-top: 1px solid #003366}	
+ td.td04181405 {font-family:arial; font-size:11pt; color:#000000; 
+		text-align:left; border-top: 1px solid #003366}	
+ td.td04201405 {font-family:arial; font-size:12pt; color:#000000; 
+		text-align:left; border-top: 1px solid #003366}
+/***		64 - border bottom: 2 Solid
+ 
+ td.td04166405 {font-family:arial; font-size:10pt; color:#000000; 
+		text-align:left; border-bottom:2px solid #003366}
+/***		------------------------------------------		*****/
+/***		24 & 25 Both Light Grey and Navy Borders		*****/
+/***		03 - border bottom and right				*****/
+ td.td04100324 {font-family:arial; font-size:7pt; color:#000000; 
+		text-align:left; border-right: 1px solid #003366;
+		border-bottom: 1px solid #DCDCDC} 
+ td.td04120324 {font-family:arial; font-size:8pt; color:#000000; 
+		text-align:left; border-right: 1px solid #003366;
+		border-bottom: 1px solid #DCDCDC}	
+ td.td04140324 {font-family:arial; font-size:9pt; color:#000000; 
+		text-align:left; border-right: 1px solid #003366;
+		border-bottom: 1px solid #DCDCDC}	
+ td.td04160324 {font-family:arial; font-size:10pt; color:#000000; 
+		text-align:left; border-right: 1px solid #003366;
+		border-bottom: 1px solid #DCDCDC}	
+ td.td04180324 {font-family:arial; font-size:11pt; color:#000000; 
+		text-align:left; border-right: 1px solid #003366;
+		border-bottom: 1px solid #DCDCDC}	
+ td.td04200324 {font-family:arial; font-size:12pt; color:#000000; 
+		text-align:left; border-right: 1px solid #003366;
+		border-bottom: 1px solid #DCDCDC}
+ td.td04100325 {font-family:arial; font-size:7pt; color:#000000; 
+		text-align:left; border-right: 1px solid #DCDCDC;
+		border-bottom: 1px solid #003366} 
+ td.td04120325 {font-family:arial; font-size:8pt; color:#000000; 
+		text-align:left; border-right: 1px solid #DCDCDC;
+		border-bottom: 1px solid #003366}	
+ td.td04140325 {font-family:arial; font-size:9pt; color:#000000; 
+		text-align:left; border-right: 1px solid #DCDCDC;
+		border-bottom: 1px solid #003366}	
+ td.td04160325 {font-family:arial; font-size:10pt; color:#000000; 
+		text-align:left; border-right: 1px solid #DCDCDC;
+		border-bottom: 1px solid #003366}	
+ td.td04180325 {font-family:arial; font-size:11pt; color:#000000; 
+		text-align:left; border-right: 1px solid #DCDCDC;
+		border-bottom: 1px solid #003366}	
+ td.td04200325 {font-family:arial; font-size:12pt; color:#000000; 
+		text-align:left; border-right: 1px solid #DCDCDC;
+		border-bottom: 1px solid #003366}
+/***		04 - border bottom and top				*****/
+ td.td04100424 {font-family:arial; font-size:7pt; color:#000000; 
+		text-align:left; border-top: 1px solid #003366;
+		border-bottom: 1px solid #DCDCDC} 
+ td.td04120424 {font-family:arial; font-size:8pt; color:#000000; 
+		text-align:left; border-top: 1px solid #003366;
+		border-bottom: 1px solid #DCDCDC}
+ td.td04120424a {font-family:arial; font-size:8pt; color:#000000; 
+		text-align:left; border-top: 2px solid #003366;
+		border-bottom: 1px solid #DCDCDC}
+ td.td04120424b {font-family:arial; font-size:8pt; color:#000000; 
+		text-align:left; border-top: 2px solid #003366}	
+ td.td04120424c {font-family:arial; font-size:8pt; color:#000000; 
+		text-align:left; border-top: 3px solid #000000;
+		border-bottom: 1px solid #DCDCDC}
+ td.td04120424d {font-family:arial; font-size:8pt; color:#000000; 
+		text-align:left; border-top: 3px solid #000000}			
+ td.td04140424 {font-family:arial; font-size:9pt; color:#000000; 
+		text-align:left; border-top: 1px solid #003366;
+		border-bottom: 1px solid #DCDCDC}
+ td.td04140424a {font-family:arial; font-size:9pt; color:#000000; 
+		text-align:left; border-top: 2px solid #003366;
+		border-bottom: 1px solid #DCDCDC}
+ td.td04140424b {font-family:arial; font-size:9pt; color:#000000; 
+		text-align:left; border-top: 2px solid #003366}	
+ td.td04140424c {font-family:arial; font-size:9pt; color:#000000; 
+		text-align:left; border-top: 3px solid #000000;
+		border-bottom: 1px solid #DCDCDC}
+ td.td04140424d {font-family:arial; font-size:9pt; color:#000000; 
+		text-align:left; border-top: 3px solid #000000}	
+ td.td04160424 {font-family:arial; font-size:10pt; color:#000000; 
+		text-align:left; border-top: 1px solid #003366;
+		border-bottom: 1px solid #DCDCDC}	
+ td.td04180424 {font-family:arial; font-size:11pt; color:#000000; 
+		text-align:left; border-top: 1px solid #003366;
+		border-bottom: 1px solid #DCDCDC}	
+ td.td04200424 {font-family:arial; font-size:12pt; color:#000000; 
+		text-align:left; border-top: 1px solid #003366;
+		border-bottom: 1px solid #DCDCDC}
+/***		05 - border bottom dark - left and right lighter	*****/
+ td.td04100524 {font-family:arial; font-size:7pt; color:#000000; 
+		text-align:left; border-bottom: 1px solid #003366;
+		border-left: 1px solid #DCDCDC;
+		border-right: 1px solid #DCDCDC} 
+ td.td04120524 {font-family:arial; font-size:8pt; color:#000000; 
+		text-align:left; border-bottom: 1px solid #003366;
+		border-left: 1px solid #DCDCDC;
+		border-right: 1px solid #DCDCDC} 
+ td.td04140524 {font-family:arial; font-size:9pt; color:#000000; 
+		text-align:left; border-bottom: 1px solid #003366;
+		border-left: 1px solid #DCDCDC;
+		border-right: 1px solid #DCDCDC} 	
+ td.td04160524 {font-family:arial; font-size:10pt; color:#000000; 
+		text-align:left; border-bottom: 1px solid #003366;
+		border-left: 1px solid #DCDCDC;
+		border-right: 1px solid #DCDCDC} 	
+ td.td04180524 {font-family:arial; font-size:11pt; color:#000000; 
+		text-align:left; border-bottom: 1px solid #003366;
+		border-left: 1px solid #DCDCDC;
+		border-right: 1px solid #DCDCDC} 
+ td.td04200524 {font-family:arial; font-size:12pt; color:#000000; 
+		text-align:left; border-bottom: 1px solid #003366;
+		border-left: 1px solid #DCDCDC;
+		border-right: 1px solid #DCDCDC} 
+/***		73 - border bottom and right (DARK)				*****/
+ td.td04107324 {font-family:arial; font-size:7pt; color:#000000; 
+		text-align:left; border-right: 2px solid #003366;
+		border-bottom: 1px solid #DCDCDC} 
+ td.td04127324 {font-family:arial; font-size:8pt; color:#000000; 
+		text-align:left; border-right: 2px solid #003366;
+		border-bottom: 1px solid #DCDCDC}	
+ td.td04147324 {font-family:arial; font-size:9pt; color:#000000; 
+		text-align:left; border-right: 2px solid #003366;
+		border-bottom: 1px solid #DCDCDC}	
+ td.td04167324 {font-family:arial; font-size:10pt; color:#000000; 
+		text-align:left; border-right: 2px solid #003366;
+		border-bottom: 1px solid #DCDCDC}	
+ td.td04187324 {font-family:arial; font-size:11pt; color:#000000; 
+		text-align:left; border-right: 2px solid #003366;
+		border-bottom: 1px solid #DCDCDC}	
+ td.td04207324 {font-family:arial; font-size:12pt; color:#000000; 
+		text-align:left; border-right: 2px solid #003366;
+		border-bottom: 1px solid #DCDCDC}
+/***		15 - border top dark - left and right lighter	*****/
+ td.td04101524 {font-family:arial; font-size:7pt; color:#000000; 
+		text-align:left; border-top: 1px solid #003366;
+		border-left: 1px solid #DCDCDC;
+		border-right: 1px solid #DCDCDC} 
+ td.td04121524 {font-family:arial; font-size:8pt; color:#000000; 
+		text-align:left; border-top: 1px solid #003366;
+		border-left: 1px solid #DCDCDC;
+		border-right: 1px solid #DCDCDC} 
+ td.td04141524 {font-family:arial; font-size:9pt; color:#000000; 
+		text-align:left; border-top: 1px solid #003366;
+		border-left: 1px solid #DCDCDC;
+		border-right: 1px solid #DCDCDC} 	
+ td.td04161524 {font-family:arial; font-size:10pt; color:#000000; 
+		text-align:left; border-top: 1px solid #003366;
+		border-left: 1px solid #DCDCDC;
+		border-right: 1px solid #DCDCDC} 	
+ td.td04181524 {font-family:arial; font-size:11pt; color:#000000; 
+		text-align:left; border-top: 1px solid #003366;
+		border-left: 1px solid #DCDCDC;
+		border-right: 1px solid #DCDCDC} 
+ td.td04201524 {font-family:arial; font-size:12pt; color:#000000; 
+		text-align:left; border-top: 1px solid #003366;
+		border-left: 1px solid #DCDCDC;
+		border-right: 1px solid #DCDCDC} 
+/***		2401 - border Dark and Light: Background - light	*****/
+ td.td0410102401 {font-family:arial; font-size:7pt; color:#000000; 
+		text-align:left; border-top: 1px solid #003366;
+		border-bottom: 1px solid #DCDCDC;
+		border-right: 1px solid #DCDCDC;
+		background-color: #F3FAFF} 
+ td.td0412102401 {font-family:arial; font-size:8pt; color:#000000; 
+		text-align:left; border-top: 1px solid #003366;
+		border-bottom: 1px solid #DCDCDC;
+		border-right: 1px solid #DCDCDC;
+		background-color: #F3FAFF} 	
+ td.td0414102401 {font-family:arial; font-size:9pt; color:#000000; 
+		text-align:left; border-top: 1px solid #003366;
+		border-bottom: 1px solid #DCDCDC;
+		border-right: 1px solid #DCDCDC;
+		background-color: #F3FAFF} 	
+ td.td0416102401 {font-family:arial; font-size:10pt; color:#000000; 
+		text-align:left; border-top: 1px solid #003366;
+		border-bottom: 1px solid #DCDCDC;
+		border-right: 1px solid #DCDCDC;
+		background-color: #F3FAFF} 	
+ td.td0418102401 {font-family:arial; font-size:11pt; color:#000000; 
+		text-align:left; border-top: 1px solid #003366;
+		border-bottom: 1px solid #DCDCDC;
+		border-right: 1px solid #DCDCDC;
+		background-color: #F3FAFF} 
+ td.td0420102401 {font-family:arial; font-size:12pt; color:#000000; 
+		text-align:left; border-top: 1px solid #003366;
+		border-bottom: 1px solid #DCDCDC;
+		border-right: 1px solid #DCDCDC;
+		background-color: #F3FAFF} 
+/*******************     LINKS  (FONT)          *******************************/
+
+  a.a0410:active  {color:#003366} /*selected link   - navy   */
+  a.a0410:visited {color:#000000} /*visited link    - black  */
+  a.a0410:link    {color:#000000} /*unvisited link  - black  */
+  a.a0410:hover   {color:#003366} /*mouse over link - navy   */
+  a.a0410{font-family:arial; font-size:7pt}
+
+  a.a0412:active  {color:#003366} /*selected link   - navy   */
+  a.a0412:visited {color:#000000} /*visited link    - black  */
+  a.a0412:link    {color:#000000} /*unvisited link  - black  */
+  a.a0412:hover   {color:#003366} /*mouse over link - navy   */
+  a.a0412{font-family:arial; font-size:8pt}
+
+  a.a0414:active  {color:#003366} /*selected link   - navy   */
+  a.a0414:visited {color:#000000} /*visited link    - black  */
+  a.a0414:link    {color:#000000} /*unvisited link  - black  */
+  a.a0414:hover   {color:#003366} /*mouse over link - navy   */
+  a.a0414{font-family:arial; font-size:9pt}
+
+  a.a0416:active  {color:#003366} /*selected link   - navy   */
+  a.a0416:visited {color:#000000} /*visited link    - black  */
+  a.a0416:link    {color:#000000} /*unvisited link  - black  */
+  a.a0416:hover   {color:#003366} /*mouse over link - navy   */
+  a.a0416{font-family:arial; font-size:10pt}
+
+/****************************************************************************/
+/*  05  -  #003366  -  000.051.102  -  Navy				    */
+/****************************************************************************/
+/*----- TABLE ROW ----------------------------------------------------------*/
+ tr.tr05 {background-color:#003366}
+/*----- TABLE DATA ---------------------------------------------------------*/
+/***		00 No Borders / No change of Background Color		*****/
+ td.td0510 {font-size:7pt; font-family:arial; color:#003366; text-align:left}	
+ td.td0512 {font-size:8pt; font-family:arial; color:#003366; text-align:left}
+ td.td0514 {font-size:9pt; font-family:arial; color:#003366; text-align:left}	
+ td.td0516 {font-size:10pt; font-family:arial; color:#003366; text-align:left}	
+ td.td0518 {font-size:11pt; font-family:arial; color:#003366; text-align:left}	
+ td.td0520 {font-size:12pt; font-family:arial; color:#003366; text-align:left}	
+/***            ------------------------------				*****/
+/***		02 Light Grey Colored Borders				*****/
+/***		01 - border bottom only					*****/
+  td.td05120102 {font-size:8pt; font-family:arial; color:#003366; 
+		text-align:left; border-bottom: 1px solid #DCDCDC}
+  td.td05140102 {font-size:9pt; font-family:arial; color:#003366; 
+		text-align:left; border-bottom: 1px solid #DCDCDC}
+  td.td05160102 {font-size:10pt; font-family:arial; color:#003366; 
+		text-align:left; border-bottom: 1px solid #DCDCDC}
+  td.td05180102 {font-size:11pt; font-family:arial; color:#003366; 
+		text-align:left; border-bottom: 1px solid #DCDCDC}
+  td.td05200102 {font-size:12pt; font-family:arial; color:#003366; 
+		text-align:left; border-bottom: 1px solid #DCDCDC}
+/***		0201 - grey border bottom - Light Blue Background		*****/
+ td.td0510010201 {font-size:7pt; font-family:arial; color:#003366; 
+		text-align:left; border-bottom: 1px solid #DCDCDC;
+		background-color: #F3FAFF} 
+ td.td0512010201 {font-size:8pt; font-family:arial; color:#003366; 
+		text-align:left; border-bottom: 1px solid #DCDCDC;
+		background-color: #F3FAFF} 
+ td.td0514010201 {font-size:9pt; font-family:arial; color:#003366; 
+		text-align:left; border-bottom: 1px solid #DCDCDC;
+		background-color: #F3FAFF} 
+ td.td0516010201 {font-size:10pt; font-family:arial; color:#003366; 
+		text-align:left; border-bottom: 1px solid #DCDCDC;
+		background-color: #F3FAFF} 
+ td.td0518010201 {font-size:11pt; font-family:arial; color:#003366; 
+		text-align:left; border-bottom: 1px solid #DCDCDC;
+		background-color: #F3FAFF} 
+ td.td0520010201 {font-size:12pt; font-family:arial; color:#003366; 
+		text-align:left; border-bottom: 1px solid #DCDCDC;
+		background-color: #F3FAFF} 
+***            ------------------------------				*****/
+/***		05 Navy Colored Borders		 			*****/
+  td.td05140105 {font-size:9pt; font-family:arial; color:#003366; 
+		text-align:left; border-bottom: 1px solid #003366}
+  td.td05160105 {font-size:10pt; font-family:arial; color:#003366; 
+		text-align:left; border-bottom: 1px solid #003366}
+/***		04 - border bottom and top				*****/
+ td.td05100405 {font-family:arial; font-size:7pt; color:#003366; 
+		text-align:left; border-top: 1px solid #003366;
+		border-bottom: 1px solid #003366} 
+ td.td05120405 {font-family:arial; font-size:8pt; color:#003366; 
+		text-align:left; border-top: 1px solid #003366;
+		border-bottom: 1px solid #003366}	
+ td.td05140405 {font-family:arial; font-size:9pt; color:#003366; 
+		text-align:left; border-top: 1px solid #003366;
+		border-bottom: 1px solid #003366}	
+ td.td05160405 {font-family:arial; font-size:10pt; color:#003366; 
+		text-align:left; border-top: 1px solid #003366;
+		border-bottom: 1px solid #003366}	
+/***		14 - border top only					*****/
+
+ td.td05101405 {font-family:arial; font-size:7pt; color:#003366; 
+		text-align:left; border-top: 1px solid #003366}
+ td.td05121405 {font-family:arial; font-size:8pt; color:#003366; 
+		text-align:left; border-top: 1px solid #003366}	
+ td.td05141405 {font-family:arial; font-size:9pt; color:#003366; 
+		text-align:left; border-top: 1px solid #003366}	
+ td.td05161405 {font-family:arial; font-size:10pt; color:#003366; 
+		text-align:left; border-top: 1px solid #003366}	
+ td.td05181405 {font-family:arial; font-size:11pt; color:#003366; 
+		text-align:left; border-top: 1px solid #003366}	
+ td.td05201405 {font-family:arial; font-size:12pt; color:#003366; 
+		text-align:left; border-top: 1px solid #003366}
+/***		------------------------------------------		*****/
+/***		24 Both Light Grey and Navy Borders		*****/
+/***		03 - border bottom and right				*****/
+ td.td05100324 {font-family:arial; font-size:7pt; color:#003366; 
+		text-align:left; border-right: 1px solid #003366;
+		border-bottom: 1px solid #DCDCDC} 
+ td.td05120324 {font-family:arial; font-size:8pt; color:#003366; 
+		text-align:left; border-right: 1px solid #003366;
+		border-bottom: 1px solid #DCDCDC}	
+ td.td05140324 {font-family:arial; font-size:9pt; color:#003366; 
+		text-align:left; border-right: 1px solid #003366;
+		border-bottom: 1px solid #DCDCDC}	
+ td.td05160324 {font-family:arial; font-size:10pt; color:#003366; 
+		text-align:left; border-right: 1px solid #003366;
+		border-bottom: 1px solid #DCDCDC}	
+ td.td05180324 {font-family:arial; font-size:11pt; color:#003366; 
+		text-align:left; border-right: 1px solid #003366;
+		border-bottom: 1px solid #DCDCDC}	
+ td.td05200324 {font-family:arial; font-size:12pt; color:#003366; 
+		text-align:left; border-right: 1px solid #003366;
+		border-bottom: 1px solid #DCDCDC}
+/***		04 - border bottom and top				*****/
+ td.td05100424 {font-family:arial; font-size:7pt; color:#003366; 
+		text-align:left; border-top: 1px solid #003366;
+		border-bottom: 1px solid #DCDCDC} 
+ td.td05120424 {font-family:arial; font-size:8pt; color:#003366; 
+		text-align:left; border-top: 1px solid #003366;
+		border-bottom: 1px solid #DCDCDC}	
+ td.td05140424 {font-family:arial; font-size:9pt; color:#003366; 
+		text-align:left; border-top: 1px solid #003366;
+		border-bottom: 1px solid #DCDCDC}	
+ td.td05160424 {font-family:arial; font-size:10pt; color:#003366; 
+		text-align:left; border-top: 1px solid #003366;
+		border-bottom: 1px solid #DCDCDC}	
+ td.td05180424 {font-family:arial; font-size:11pt; color:#003366; 
+		text-align:left; border-top: 1px solid #003366;
+		border-bottom: 1px solid #DCDCDC}	
+ td.td05200424 {font-family:arial; font-size:12pt; color:#003366; 
+		text-align:left; border-top: 1px solid #003366;
+		border-bottom: 1px solid #DCDCDC}
+/***		06 - border bottom, top, left and right			*****/
+ td.td05100605 {font-family:arial; font-size:7pt; color:#003366; 
+		text-align:left; border-top: 1px solid #003366;
+		border-bottom: 1px solid #003366;
+		border-left: 1px solid #003366;
+		border-right: 1px solid #003366} 
+ td.td05120605 {font-family:arial; font-size:8pt; color:#003366; 
+		text-align:left; border-top: 1px solid #003366;
+		border-bottom: 1px solid #003366;
+		border-left: 1px solid #003366;
+		border-right: 1px solid #003366} 
+ td.td05140605 {font-family:arial; font-size:9pt; color:#003366; 
+		text-align:left; border-top: 1px solid #003366;
+		border-bottom: 1px solid #003366;
+		border-left: 1px solid #003366;
+		border-right: 1px solid #003366} 
+ td.td05160605 {font-family:arial; font-size:10pt; color:#003366; 
+		text-align:left; border-top: 1px solid #003366;
+		border-bottom: 1px solid #003366;
+		border-left: 1px solid #003366;
+		border-right: 1px solid #003366} 
+ td.td05180605 {font-family:arial; font-size:11pt; color:#003366; 
+		text-align:left; border-top: 1px solid #003366;
+		border-bottom: 1px solid #003366;
+		border-left: 1px solid #003366;
+		border-right: 1px solid #003366} 
+ td.td05200605 {font-family:arial; font-size:12pt; color:#003366; 
+		text-align:left; border-top: 1px solid #003366;
+		border-bottom: 1px solid #003366;
+		border-left: 1px solid #003366;
+/***		73 - border bottom and right				*****/
+ td.td05107324 {font-family:arial; font-size:7pt; color:#003366; 
+		text-align:left; border-right: 2px solid #003366;
+		border-bottom: 1px solid #DCDCDC} 
+ td.td05127324 {font-family:arial; font-size:8pt; color:#003366; 
+		text-align:left; border-right: 2px solid #003366;
+		border-bottom: 1px solid #DCDCDC}	
+ td.td05147324 {font-family:arial; font-size:9pt; color:#003366; 
+		text-align:left; border-right: 2px solid #003366;
+		border-bottom: 1px solid #DCDCDC}	
+ td.td05167324 {font-family:arial; font-size:10pt; color:#003366; 
+		text-align:left; border-right: 2px solid #003366;
+		border-bottom: 1px solid #DCDCDC}	
+ td.td05187324 {font-family:arial; font-size:11pt; color:#003366; 
+		text-align:left; border-right: 2px solid #003366;
+		border-bottom: 1px solid #DCDCDC}	
+ td.td05207324 {font-family:arial; font-size:12pt; color:#003366; 
+		text-align:left; border-right: 2px solid #003366;
+		border-bottom: 1px solid #DCDCDC}
+/***		04 - border bottom and top				*****/
+ td.td05107424 {font-family:arial; font-size:7pt; color:#003366; 
+		text-align:left; border-top: 1px solid #003366;
+		border-bottom: 1px solid #003366} 
+ td.td05127424 {font-family:arial; font-size:8pt; color:#003366; 
+		text-align:left; border-top: 1px solid #003366;
+		border-bottom: 1px solid #003366}	
+ td.td05147424 {font-family:arial; font-size:9pt; color:#003366; 
+		text-align:left; border-top: 1px solid #003366;
+		border-bottom: 1px solid #003366}	
+ td.td05167424 {font-family:arial; font-size:10pt; color:#003366; 
+		text-align:left; border-top: 1px solid #003366;
+		border-bottom: 1px solid #003366}	
+ td.td05187424 {font-family:arial; font-size:11pt; color:#003366; 
+		text-align:left; border-top: 1px solid #003366;
+		border-bottom: 1px solid #003366}	
+ td.td05207424 {font-family:arial; font-size:12pt; color:#003366; 
+		text-align:left; border-top: 1px solid #003366;
+		border-bottom: 1px solid #003366}
+
+/****************************************************************************/
+/*  06  -  #C3E7FF  -  195.231.255  -  Med Blue				    */
+/****************************************************************************/
+/*----- TABLE ROW ----------------------------------------------------------*/
+ tr.tr06 {background-color:#C3E7FF}
+/****************************************************************************/

@@ -1,0 +1,35 @@
+<%@page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%@page import="com.treetop.SessionVariables, java.util.Arrays" %>
+<!doctype html>
+<jsp:include page="/view/template/head.jsp"></jsp:include>
+<%  String environment = (String) request.getParameter("environment");
+    if (environment == null || environment.equals("")) { 
+        environment="PRD";
+    }
+    
+    String[] roles = SessionVariables.getSessionttiUserRoles(request, null);
+    boolean internal = false;
+    if (roles != null && Arrays.asList(roles).contains("1")) {
+        internal = true;
+    }
+%>
+<%-- tpl:insert attribute="headarea" --%>
+	<title></title>
+<%-- /tpl:insert --%>
+<jsp:include page="/view/template/scripts.jsp"></jsp:include>
+<%-- tpl:insert attribute="js" --%>
+
+<%-- /tpl:insert --%>
+</head>
+<body>
+<jsp:include page="/view/template/stylesheets.jsp"></jsp:include>
+<jsp:include page="/view/template/header.jsp"></jsp:include>
+<%-- tpl:insert attribute="bodyarea" --%>
+
+
+
+
+<%-- /tpl:insert --%>
+<jsp:include page="/view/template/footer.jsp"></jsp:include>
+</body>
+</html>

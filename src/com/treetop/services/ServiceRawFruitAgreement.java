@@ -1,8 +1,9 @@
 package com.treetop.services;
 
 import com.treetop.businessobjects.*;
-import com.treetop.controller.rawfruitagreements.InqRawFruitAgreements;
+import com.treetop.controller.rawfruitagreements.InqRawFruitAgreement;
 import com.treetop.controller.rawfruitagreements.UpdContract;
+import com.treetop.controller.rawfruitagreements.UpdCropInfo;
 import com.treetop.utilities.GeneralUtility;
 import com.treetop.utilities.UtilityDateTime;
 import com.treetop.utilities.html.HtmlOption;
@@ -25,14 +26,15 @@ public class ServiceRawFruitAgreement {
 	@Test
 	public void testGetRawFruitAgreement() {
         try {
-            InqRawFruitAgreements inqRFA = new InqRawFruitAgreements();
+            InqRawFruitAgreement inqRFA = new InqRawFruitAgreement();
             inqRFA.setEnvironment("TST");
-            inqRFA.setWriteUpNumber("1234");
+            inqRFA.setId(1);
             getAgreement(inqRFA);
 
-            // test code - more stuff
 
-        } catch (Exception e)         {
+            System.out.println("complete");
+
+        } catch (Exception e) {
             fail(e.toString());
         }
 	}
@@ -115,14 +117,14 @@ public class ServiceRawFruitAgreement {
 
     }
 
-	public static void getAgreement(InqRawFruitAgreements inqRawFruitAgreements) {
+	public static void getAgreement(InqRawFruitAgreement inqRawFruitAgreement) {
 
         Connection conn = null;
         try {
 
             conn = ServiceConnection.getConnectionStack15();
-            getAgreement(conn, inqRawFruitAgreements);
-            getAgreementLines(conn, inqRawFruitAgreements);
+            getAgreement(conn, inqRawFruitAgreement);
+            getAgreementLines(conn, inqRawFruitAgreement);
 
         } catch (Exception e) {
             System.err.println(e);
@@ -243,7 +245,7 @@ public class ServiceRawFruitAgreement {
 		
 	}
 
-    private static RawFruitAgreement getAgreement(Connection conn, InqRawFruitAgreements inqRawFruitAgreements)
+    private static RawFruitAgreement getAgreement(Connection conn, InqRawFruitAgreement inqRawFruitAgreement)
     throws Exception {
         RawFruitAgreement rawFruitAgreement = null;
         Statement stmt = null;
@@ -251,10 +253,10 @@ public class ServiceRawFruitAgreement {
         try {
 
             stmt = conn.createStatement();
-            String sql = BuildSQL.getAgreementHeader(inqRawFruitAgreements);
+            String sql = BuildSQL.getAgreementHeader(inqRawFruitAgreement);
             rs = stmt.executeQuery(sql);
             rawFruitAgreement = LoadFields.getAgreementHeader(rs);
-            inqRawFruitAgreements.setAgreement(rawFruitAgreement);
+            inqRawFruitAgreement.setAgreement(rawFruitAgreement);
 
 
         } catch (Exception e) {
@@ -270,8 +272,6 @@ public class ServiceRawFruitAgreement {
     }
 
     public static void updateAgreement(UpdContract updContract) {
-
-        RawFruitAgreement rfa;
 
         Connection conn = null;
         try {
@@ -319,17 +319,18 @@ public class ServiceRawFruitAgreement {
             String sql = BuildSQL.insertAgreementHeader(updContract);
             pstmt = conn.prepareStatement(sql);
 
-            pstmt.setString(1, updContract.getWriteUpNumber());
-            pstmt.setString(2, updContract.getSupplierNumber());
+            pstmt.setInt(1, updContract.getId());
+            pstmt.setString(2, updContract.getWriteUpNumber());
+            pstmt.setString(3, updContract.getSupplierNumber());
 
             DateTime entryDate = UtilityDateTime.getDateFromMMddyyyyWithSlash(updContract.getEntryDate());
-            pstmt.setString(3, entryDate.getDateFormatyyyyMMdd());
+            pstmt.setString(4, entryDate.getDateFormatyyyyMMdd());
 
             DateTime revisionDate = UtilityDateTime.getDateFromMMddyyyyWithSlash(updContract.getRevisionDate());
-            pstmt.setString(4, revisionDate.getDateFormatyyyyMMdd());
+            pstmt.setString(5, revisionDate.getDateFormatyyyyMMdd());
 
-            pstmt.setString(5, updContract.getCropYear());
-            pstmt.setString(6, updContract.getFieldRep());
+            pstmt.setString(6, updContract.getCropYear());
+            pstmt.setString(7, updContract.getFieldRep());
 
             pstmt.executeUpdate();
 
@@ -344,18 +345,18 @@ public class ServiceRawFruitAgreement {
     }
 
 
-     private static void getAgreementLines(Connection conn, InqRawFruitAgreements inqRawFruitAgreements) {
+     private static void getAgreementLines(Connection conn, InqRawFruitAgreement inqRawFruitAgreement) {
 
         Statement stmt = null;
         ResultSet rs = null;
         try {
 
             stmt = conn.createStatement();
-            String sql = BuildSQL.getAgreementLines(inqRawFruitAgreements);
+            String sql = BuildSQL.getAgreementLines(inqRawFruitAgreement);
             rs = stmt.executeQuery(sql);
 
             List<RawFruitAgreementLine> lines = LoadFields.getAgreementLines(rs);
-            inqRawFruitAgreements.getAgreement().setLines(lines);
+            inqRawFruitAgreement.getAgreement().setLines(lines);
 
 
         } catch (Exception e) {
@@ -364,6 +365,88 @@ public class ServiceRawFruitAgreement {
             try {
                 rs.close();
                 stmt.close();
+            } catch (Exception e) {}
+        }
+
+    }
+
+
+    public static void updateAgreementLine(UpdCropInfo updCropInfo) {
+
+
+        Connection conn = null;
+        try {
+
+            conn = ServiceConnection.getConnectionStack15();
+            deleteAgreementLine(conn, updCropInfo);
+            insertAgreementLine(conn, updCropInfo);
+
+        } catch (Exception e) {
+            System.err.println(e);
+        } finally {
+            try {
+                ServiceConnection.returnConnectionStack15(conn);
+            } catch (Exception e) {}
+        }
+
+    }
+
+    private static void deleteAgreementLine(Connection conn, UpdCropInfo updCropInfo)
+            throws Exception {
+
+        Statement stmt = null;
+        try {
+
+            stmt = conn.createStatement();
+            String sql = BuildSQL.deleteAgreementLine(updCropInfo);
+            stmt.executeUpdate(sql);
+
+        } catch (Exception e) {
+            throw new Exception(e);
+        } finally {
+            try {
+                stmt.close();
+            } catch (Exception e) {}
+        }
+
+    }
+
+
+    private static void insertAgreementLine(Connection conn, UpdCropInfo updCropInfo)
+            throws Exception {
+
+        PreparedStatement pstmt = null;
+        try {
+
+            String sql = BuildSQL.insertAgreementLine(updCropInfo);
+            pstmt = conn.prepareStatement(sql);
+
+            pstmt.setInt(1, updCropInfo.getId());
+            pstmt.setInt(2, updCropInfo.getSequence());
+            pstmt.setString(3, updCropInfo.getCrop());
+            pstmt.setString(4, updCropInfo.getType());
+            pstmt.setString(5, updCropInfo.getRun());
+            pstmt.setString(6, updCropInfo.getCategory());
+            pstmt.setString(7, updCropInfo.getVariety());
+            pstmt.setString(8, updCropInfo.getVarietyMisc());
+            pstmt.setBigDecimal(9, new BigDecimal(updCropInfo.getBins()));
+            pstmt.setString(10, updCropInfo.getBinType());
+            pstmt.setString(11, updCropInfo.getPaymentType());
+            pstmt.setBigDecimal(12, new BigDecimal(updCropInfo.getJuicePrice()));
+            pstmt.setBigDecimal(13, new BigDecimal(updCropInfo.getJpPrice()));
+            pstmt.setBigDecimal(14, new BigDecimal(updCropInfo.getPeelerPrice()));
+            pstmt.setBigDecimal(15, new BigDecimal(updCropInfo.getPremiumPrice()));
+            pstmt.setBigDecimal(16, new BigDecimal(updCropInfo.getFreshSlicePrice()));
+            pstmt.setBigDecimal(17, new BigDecimal(updCropInfo.getPrice()));
+
+
+            pstmt.executeUpdate();
+
+        } catch (Exception e) {
+            throw new Exception(e);
+        } finally {
+            try {
+                pstmt.close();
             } catch (Exception e) {}
         }
 
@@ -399,18 +482,18 @@ public class ServiceRawFruitAgreement {
 
     private static class BuildSQL {
 
-        private static String getAgreementHeader(InqRawFruitAgreements inqRawFruitAgreements) {
+        private static String getAgreementHeader(InqRawFruitAgreement inqRawFruitAgreement) {
 
-            String ttLibrary = GeneralUtility.getTTLibrary(inqRawFruitAgreements.getEnvironment());
-            String library = GeneralUtility.getLibrary(inqRawFruitAgreements.getEnvironment());
+            String ttLibrary = GeneralUtility.getTTLibrary(inqRawFruitAgreement.getEnvironment());
+            String library = GeneralUtility.getLibrary(inqRawFruitAgreement.getEnvironment());
 
             StringBuilder sql = new StringBuilder();
 
-            sql.append(" SELECT AHSUNO, AHENDT, AHRVDT, AHCRPY, AHFREP, IDSUNM \r");
+            sql.append(" SELECT AHCTID, AHSUNO, AHENDT, AHRVDT, AHCRPY, AHFREP, IDSUNM \r");
             sql.append(" FROM " + ttLibrary + ".GRPRFAHD \r");
             sql.append(" LEFT OUTER JOIN " + library + ".CIDMAS ON \r");
             sql.append(" IDCONO=100 AND IDSUAL='RFS' AND IDSUNO=AHSUNO \r");
-            sql.append(" WHERE AHWNBR='" + inqRawFruitAgreements.getWriteUpNumber() + "' \r");
+            sql.append(" WHERE AHCTID='" + inqRawFruitAgreement.getId() + "' \r");
 
             return sql.toString();
 
@@ -423,7 +506,21 @@ public class ServiceRawFruitAgreement {
             StringBuilder sql = new StringBuilder();
 
             sql.append(" DELETE " + ttLibrary + ".GRPRFAHD \r");
-            sql.append(" WHERE AHWNBR='" + updContract.getWriteUpNumber() + "' \r");
+            sql.append(" WHERE AHCTID='" + updContract.getId() + "' \r");
+
+            return sql.toString();
+
+        }
+
+        private static String deleteAgreementLine(UpdCropInfo updCropInfo) {
+
+            String ttLibrary = GeneralUtility.getTTLibrary(updCropInfo.getEnvironment());
+
+            StringBuilder sql = new StringBuilder();
+
+            sql.append(" DELETE " + ttLibrary + ".GRPRFACP \r");
+            sql.append(" WHERE ACCNID='" + updCropInfo.getId() + "' \r");
+            sql.append("   AND ACCSEQ='" + updCropInfo.getSequence() + "' \r");
 
             return sql.toString();
 
@@ -437,22 +534,37 @@ public class ServiceRawFruitAgreement {
 
             sql.append(" INSERT INTO " + ttLibrary + ".GRPRFAHD \r");
             sql.append(" VALUES ( \r");
-            sql.append(" ?,  ?, ?, ?, ?, ? \r");
+            sql.append(" ?, ?, ?, ?, ?, ?, ? \r");
             sql.append(" ) \r");
 
             return sql.toString();
 
         }
 
-        private static String getAgreementLines(InqRawFruitAgreements inqRawFruitAgreements) {
+        private static String insertAgreementLine(UpdCropInfo updCropInfo) {
 
-            String ttLibrary = GeneralUtility.getTTLibrary(inqRawFruitAgreements.getEnvironment());
+            String ttLibrary = GeneralUtility.getTTLibrary(updCropInfo.getEnvironment());
+
+            StringBuilder sql = new StringBuilder();
+
+            sql.append(" INSERT INTO " + ttLibrary + ".GRPRFACP \r");
+            sql.append(" VALUES ( \r");
+            sql.append(" ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? \r");
+            sql.append(" ) \r");
+
+            return sql.toString();
+
+        }
+
+        private static String getAgreementLines(InqRawFruitAgreement inqRawFruitAgreement) {
+
+            String ttLibrary = GeneralUtility.getTTLibrary(inqRawFruitAgreement.getEnvironment());
 
             StringBuilder sql = new StringBuilder();
 
             sql.append(" SELECT *  \r");
             sql.append(" FROM " + ttLibrary + ".GRPRFACP \r");
-            sql.append(" WHERE ACWNBR='" + inqRawFruitAgreements.getWriteUpNumber() + "' \r");
+            sql.append(" WHERE ACCTID='" + inqRawFruitAgreement.getId() + "' \r");
             sql.append(" ORDER BY ACCROP, ACTYPE, ACORUN, ACCATG, ACVARI, ACVARM \r");
 
             return sql.toString();
@@ -467,6 +579,7 @@ public class ServiceRawFruitAgreement {
 
             RawFruitAgreement rfa = new RawFruitAgreement();
             if (rs.next()) {
+                rfa.setId(rs.getInt("AHCTID"));
                 rfa.setSupplierNumber(rs.getString("AHSUNO").trim());
                 rfa.setSupplierName(rs.getString("IDSUNM").trim());
                 rfa.setEntryDate(rs.getString("AHENDT"));
@@ -487,13 +600,26 @@ public class ServiceRawFruitAgreement {
 
                 RawFruitAgreementLine line = new RawFruitAgreementLine();
 
-                line.setSequence(rs.getString("ACCSEQ"));
-                line.setCrop(rs.getString("ACCROP"));
-                line.setType(rs.getString("ACTYPE"));
-                line.setRun(rs.getString("ACORUN"));
-                line.setCategory(rs.getString("ACCATG"));
-                line.setVariety(rs.getString("ACVARI"));
-                line.setVarietyMisc(rs.getString("ACVARM"));
+                line.setId(rs.getInt("ACCTID"));
+                line.setSequence(rs.getInt("ACCSEQ"));
+                line.setCrop(rs.getString("ACCROP").trim());
+                line.setType(rs.getString("ACTYPE").trim());
+                line.setRun(rs.getString("ACORUN").trim());
+                line.setCategory(rs.getString("ACCATG").trim());
+                line.setVariety(rs.getString("ACVARI").trim());
+                line.setVarietyMisc(rs.getString("ACVARM").trim());
+
+                line.setBins(rs.getBigDecimal("ACBINS"));
+                line.setBinType(rs.getString("ACBINT").trim());
+                line.setPaymentType(rs.getString("ACPMTP").trim());
+                line.setJuicePrice(rs.getBigDecimal("ACJCPR"));
+                line.setJpPrice(rs.getBigDecimal("ACJCPR"));
+                line.setPeelerPrice(rs.getBigDecimal("ACPEPR"));
+                line.setPremiumPrice(rs.getBigDecimal("ACPRPR"));
+                line.setFreshSlicePrice(rs.getBigDecimal("ACFSPR"));
+                line.setPrice(rs.getBigDecimal("ACOTPR"));
+
+
 
                 lines.add(line);
 

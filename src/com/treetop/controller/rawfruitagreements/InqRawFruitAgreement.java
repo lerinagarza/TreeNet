@@ -9,16 +9,17 @@ import com.treetop.controller.UrlPathMapping;
 
 
 @UrlPathMapping({"requestType","writeUpNumber","detailSequence"})
-public class InqRawFruitAgreements extends BaseViewBeanR4{
+public class InqRawFruitAgreement extends BaseViewBeanR4{
 
+    private int id = 0;
 	private String writeUpNumber = "";
 	private RawFruitAgreement agreement = null;
 	private RawFruitAgreementLine lineAgreement = null;
 	
 
-    public InqRawFruitAgreements(){}
+    public InqRawFruitAgreement(){}
 
-	public InqRawFruitAgreements(HttpServletRequest request) {
+	public InqRawFruitAgreement(HttpServletRequest request) {
 		populate(request);
 	}
 
@@ -51,5 +52,12 @@ public class InqRawFruitAgreements extends BaseViewBeanR4{
 	public void setLineAgreement(RawFruitAgreementLine lineAgreement) {
 		this.lineAgreement = lineAgreement;
 	}
-	
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 }

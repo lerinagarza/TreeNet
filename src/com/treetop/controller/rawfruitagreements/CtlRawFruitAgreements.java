@@ -28,7 +28,7 @@ public class CtlRawFruitAgreements extends BaseController{
 	}
 
 	public String detail(HttpServletRequest request) {
-		InqRawFruitAgreements rawFruit = new InqRawFruitAgreements(request);
+		InqRawFruitAgreement rawFruit = new InqRawFruitAgreement(request);
 		
 		ServiceRawFruitAgreement.getAgreement(rawFruit);
 		
@@ -38,7 +38,7 @@ public class CtlRawFruitAgreements extends BaseController{
 	}
 	
 	public String editContract(HttpServletRequest request) {
-		InqRawFruitAgreements rawFruit = new InqRawFruitAgreements(request);
+		InqRawFruitAgreement rawFruit = new InqRawFruitAgreement(request);
 		String path = "";
 		
 		if (request.getMethod().equals("GET")) {		
@@ -64,7 +64,7 @@ public class CtlRawFruitAgreements extends BaseController{
 	}
 	
 	public String editCropInfo(HttpServletRequest request) {
-		InqRawFruitAgreements rawFruit = new InqRawFruitAgreements(request);
+		InqRawFruitAgreement rawFruit = new InqRawFruitAgreement(request);
 		String path = "";
 		
 		if (request.getMethod().equals("GET")) {		
@@ -87,7 +87,7 @@ public class CtlRawFruitAgreements extends BaseController{
 	}
 	
 	public String editLocation(HttpServletRequest request) {
-		InqRawFruitAgreements rawFruit = new InqRawFruitAgreements(request);
+		InqRawFruitAgreement rawFruit = new InqRawFruitAgreement(request);
 		
 		ServiceRawFruitAgreement.getAgreement(rawFruit);
 		
@@ -97,7 +97,7 @@ public class CtlRawFruitAgreements extends BaseController{
 	}
 	
 	public String editContact(HttpServletRequest request) {
-		InqRawFruitAgreements rawFruit = new InqRawFruitAgreements(request);
+		InqRawFruitAgreement rawFruit = new InqRawFruitAgreement(request);
 		
 		ServiceRawFruitAgreement.getAgreement(rawFruit);
 		

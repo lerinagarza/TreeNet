@@ -15,7 +15,7 @@
 %>
 <%-- tpl:put name="headarea" --%>
 <%@page import ="
-    com.treetop.controller.rawfruitagreements.InqRawFruitAgreements,
+    com.treetop.controller.rawfruitagreements.InqRawFruitAgreement,
     com.treetop.utilities.UtilityDateTime"
  %>
 <%@ page import="java.util.Arrays" %>
@@ -38,7 +38,7 @@
 	display: block;}
 </style>
 
-<% InqRawFruitAgreements rawFruit = (InqRawFruitAgreements)request.getAttribute("DarthVader");
+<% InqRawFruitAgreement rawFruit = (InqRawFruitAgreement)request.getAttribute("DarthVader");
    RawFruitAgreement rfa = rawFruit.getAgreement();
    DateTime entryDate = UtilityDateTime.getDateFromyyyyMMdd(rfa.getEntryDate());
    DateTime revDate = UtilityDateTime.getDateFromyyyyMMdd(rfa.getRevisedDate());

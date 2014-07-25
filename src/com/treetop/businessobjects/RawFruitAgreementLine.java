@@ -4,7 +4,8 @@ import java.math.BigDecimal;
 
 public class RawFruitAgreementLine {
 
-    private String sequence = "";
+    private int id = 0;
+    private int sequence = 0;
 	private String crop = "";
 	private String type = "";
 	private String run = "";
@@ -116,11 +117,11 @@ public class RawFruitAgreementLine {
 		this.price = price;
 	}
 
-    public String getSequence() {
+    public int getSequence() {
         return sequence;
     }
 
-    public void setSequence(String sequence) {
+    public void setSequence(int sequence) {
         this.sequence = sequence;
     }
 
@@ -138,5 +139,12 @@ public class RawFruitAgreementLine {
 	public String toString() {
 		return this.getKey();
 	}
-	
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 }

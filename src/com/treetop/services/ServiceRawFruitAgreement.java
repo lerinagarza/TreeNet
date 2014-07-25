@@ -489,7 +489,7 @@ public class ServiceRawFruitAgreement {
 
             StringBuilder sql = new StringBuilder();
 
-            sql.append(" SELECT AHCTID, AHSUNO, AHENDT, AHRVDT, AHCRPY, AHFREP, IDSUNM \r");
+            sql.append(" SELECT AHCTID, AHWNBR, AHSUNO, AHENDT, AHRVDT, AHCRPY, AHFREP, IDSUNM \r");
             sql.append(" FROM " + ttLibrary + ".GRPRFAHD \r");
             sql.append(" LEFT OUTER JOIN " + library + ".CIDMAS ON \r");
             sql.append(" IDCONO=100 AND IDSUAL='RFS' AND IDSUNO=AHSUNO \r");
@@ -580,6 +580,7 @@ public class ServiceRawFruitAgreement {
             RawFruitAgreement rfa = new RawFruitAgreement();
             if (rs.next()) {
                 rfa.setId(rs.getInt("AHCTID"));
+                rfa.setWriteUpNumber(rs.getString("AHWNBR").trim());
                 rfa.setSupplierNumber(rs.getString("AHSUNO").trim());
                 rfa.setSupplierName(rs.getString("IDSUNM").trim());
                 rfa.setEntryDate(rs.getString("AHENDT"));

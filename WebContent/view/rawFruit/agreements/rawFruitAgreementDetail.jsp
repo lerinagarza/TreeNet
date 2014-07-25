@@ -23,6 +23,7 @@
     com.treetop.businessobjects.PhoneNumber,
     java.util.List"
         %>
+<%@ page import="com.treetop.utilities.html.HTMLHelpersMasking" %>
 
 <title>Raw Fruit Agreement</title>
 <%-- /tpl:put --%>
@@ -50,14 +51,16 @@
       <div>
         <div class="clearfix">
         <div style="float:left;">
-          Supplier #: <%=rfa.getSupplierNumber() %> - <%=rfa.getSupplierName()%>
+          <div>Write up #: <%=rfa.getWriteUpNumber() %></div>
         </div>
         <div style="float:right">
-          <a href="/web/CtlRawFruitAgreements/editContract/<%=rawFruit.getWriteUpNumber()%>/?environment=<%= rawFruit.getEnvironment()%>">Edit</a>
+          <a href="/web/CtlRawFruitAgreements/editContract/<%=rawFruit.getId()%>/?environment=<%= rawFruit.getEnvironment()%>">Edit</a>
         </div>
       </div>
       </div>
-      
+
+      <div>Supplier #: <%=rfa.getSupplierNumber() %> - <%=rfa.getSupplierName()%></div>
+
       <div class="clearfix">
       <div style="float:left; margin-right:2em;">
         Entry Date: <%=rfa.getEntryDate() %>
@@ -89,7 +92,7 @@
           <h3><%=line.getType() + " " + line.getCrop()%></h3>
         </div>
         <div style="float:right">
-          <a href="/web/CtlRawFruitAgreements/editCropInfo/<%= rawFruit.getWriteUpNumber()%>/<%=line.getSequence()%>/?environment=<%= rawFruit.getEnvironment()%> ">Edit</a>
+          <a href="/web/CtlRawFruitAgreements/editCropInfo/<%= rawFruit.getId()%>/<%=line.getSequence()%>/?environment=<%= rawFruit.getEnvironment()%> ">Edit</a>
         </div>
       </div>
         
@@ -108,23 +111,23 @@
           <table>
             <tr>
               <td>Juice</td>
-              <td><%= line.getJuicePrice() %></td>
+              <td class="right"><%= HTMLHelpersMasking.maskBigDecimal(line.getJuicePrice()) %></td>
             </tr>
             <tr>
               <td>J/P</td>
-              <td><%= line.getJpPrice() %></td>
+              <td class="right"><%= HTMLHelpersMasking.maskBigDecimal(line.getJpPrice()) %></td>
             </tr>
             <tr>
               <td>Peeler</td>
-              <td><%= line.getPeelerPrice() %></td>
+              <td class="right"><%= HTMLHelpersMasking.maskBigDecimal(line.getPeelerPrice()) %></td>
             </tr>
             <tr>
               <td>Premium</td>
-              <td><%= line.getPremiumPrice()%></td>
+              <td class="right"><%= HTMLHelpersMasking.maskBigDecimal(line.getPremiumPrice()) %></td>
             </tr>
             <tr>
               <td>Fresh Slice</td>
-              <td><%= line.getFreshSlicePrice() %></td>
+              <td class="right"><%= HTMLHelpersMasking.maskBigDecimal(line.getFreshSlicePrice()) %></td>
             </tr>
           </table>  
           </div>
@@ -150,7 +153,7 @@
           
         </div>
         <div style="float:right">
-            <a href="/web/CtlRawFruitAgreements/editContract/<%=rawFruit.getWriteUpNumber()%>/?environment=<%= rawFruit.getEnvironment()%>">Edit</a>
+            <a href="/web/CtlRawFruitAgreements/editContract/<%=rawFruit.getId()%>/?environment=<%= rawFruit.getEnvironment()%>">Edit</a>
         </div>
       </div>
         
@@ -201,7 +204,7 @@
           
         </div>
         <div style="float:right">
-            <a href="/web/CtlRawFruitAgreements/editContract/<%=rawFruit.getWriteUpNumber()%>/?environment=<%= rawFruit.getEnvironment()%>">Edit</a>
+            <a href="/web/CtlRawFruitAgreements/editContract/<%=rawFruit.getId()%>/?environment=<%= rawFruit.getEnvironment()%>">Edit</a>
         </div>
       </div>
         

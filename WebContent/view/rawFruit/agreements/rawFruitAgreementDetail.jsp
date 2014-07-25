@@ -16,7 +16,7 @@
 %>
 <%-- tpl:put name="headarea" --%>
 <%@page import ="
-    com.treetop.controller.rawfruitagreements.InqRawFruitAgreements,
+    com.treetop.controller.rawfruitagreements.InqRawFruitAgreement,
     com.treetop.businessobjects.RawFruitAgreement,
     com.treetop.businessobjects.RawFruitAgreementLine,
     com.treetop.businessobjects.Contact,
@@ -36,7 +36,7 @@
 <jsp:include page="/view/template/header.jsp"></jsp:include>
 <%-- tpl:put name="bodyarea" --%>
 
-<% InqRawFruitAgreements rawFruit = (InqRawFruitAgreements)request.getAttribute("DarthVader");
+<% InqRawFruitAgreement rawFruit = (InqRawFruitAgreement)request.getAttribute("DarthVader");
    RawFruitAgreement rfa = rawFruit.getAgreement();
 
 %>

@@ -10,6 +10,8 @@ import java.util.Vector;
 
 public class UpdContract extends BaseViewBeanR4 {
 
+
+    private int id = 0;
     private String writeUpNumber = "";
 	private String supplierNumber = "";
 	private String entryDate = "";
@@ -97,5 +99,13 @@ public class UpdContract extends BaseViewBeanR4 {
 
     public void setFieldRep(String fieldRep) {
         this.fieldRep = fieldRep;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

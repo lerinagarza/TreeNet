@@ -15,7 +15,7 @@
 %>
 <%-- tpl:put name="headarea" --%>
 <%@page import ="
-    com.treetop.controller.rawfruitagreements.InqRawFruitAgreements"
+    com.treetop.controller.rawfruitagreements.InqRawFruitAgreement"
  %>
 <%@ page import="java.util.Arrays" %>
 <%@ page import="com.treetop.controller.rawfruitagreements.UpdCropInfo" %>
@@ -36,7 +36,7 @@
 	display: block;}
 </style>
 
-<% InqRawFruitAgreements rawFruit = (InqRawFruitAgreements)request.getAttribute("DarthVader");
+<% InqRawFruitAgreement rawFruit = (InqRawFruitAgreement)request.getAttribute("DarthVader");
    RawFruitAgreementLine line = (RawFruitAgreementLine) request.getAttribute("agreementLine");
     UpdCropInfo updCropInfo = new UpdCropInfo(request);
     updCropInfo.buildDropDowns();

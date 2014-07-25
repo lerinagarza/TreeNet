@@ -11,8 +11,8 @@ import java.util.Vector;
 
 public class UpdCropInfo extends BaseViewBeanR4{
 
-    private String writeUpNumber = "";
-    private String sequence = "";
+    private int id = 0;
+    private int sequence = 0;
 	private String crop = "";
 	private String type = "";
 	private String run = "";
@@ -183,11 +183,11 @@ public class UpdCropInfo extends BaseViewBeanR4{
 	}
 
 
-    public String getSequence() {
+    public int getSequence() {
         return sequence;
     }
 
-    public void setSequence(String sequence) {
+    public void setSequence(int sequence) {
         this.sequence = sequence;
     }
 
@@ -239,11 +239,11 @@ public class UpdCropInfo extends BaseViewBeanR4{
         this.dropDownPaymentType = dropDownPaymentType;
     }
 
-    public String getWriteUpNumber() {
-        return writeUpNumber;
+    public int getId() {
+        return id;
     }
 
-    public void setWriteUpNumber(String writeUpNumber) {
-        this.writeUpNumber = writeUpNumber;
+    public void setId(int id) {
+        this.id = id;
     }
 }

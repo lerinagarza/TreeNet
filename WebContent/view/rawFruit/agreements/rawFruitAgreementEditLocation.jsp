@@ -15,7 +15,7 @@
 %>
 <%-- tpl:put name="headarea" --%>
 <%@page import ="
-    com.treetop.controller.rawfruitagreements.InqRawFruitAgreements,
+    com.treetop.controller.rawfruitagreements.InqRawFruitAgreement,
     com.treetop.businessobjects.RawFruitAgreement"
  %>
 <title>Raw Fruit Agreement Crop Details</title>
@@ -33,7 +33,7 @@
 	display: block;}
 </style>
 
-<% InqRawFruitAgreements rawFruit = (InqRawFruitAgreements)request.getAttribute("DarthVader");
+<% InqRawFruitAgreement rawFruit = (InqRawFruitAgreement)request.getAttribute("DarthVader");
    RawFruitAgreement rfa = rawFruit.getAgreement();
 %>
   

@@ -4,7 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RawFruitAgreement {
-	
+
+    private int id = 0;
+    private String writeUpNumber = "";
 	private String supplierNumber = "";
     private String supplierName = "";
 	private String entryDate = "";
@@ -119,5 +121,21 @@ public class RawFruitAgreement {
 
     public void setSupplierName(String supplierName) {
         this.supplierName = supplierName;
+    }
+
+    public String getWriteUpNumber() {
+        return writeUpNumber;
+    }
+
+    public void setWriteUpNumber(String writeUpNumber) {
+        this.writeUpNumber = writeUpNumber;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

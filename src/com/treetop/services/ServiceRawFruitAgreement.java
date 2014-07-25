@@ -28,6 +28,8 @@ public class ServiceRawFruitAgreement {
             inqRFA.setWriteUpNumber("123");
             getAgreement(inqRFA);
 
+            // test code
+
         } catch (Exception e)         {
             fail(e.toString());
         }
